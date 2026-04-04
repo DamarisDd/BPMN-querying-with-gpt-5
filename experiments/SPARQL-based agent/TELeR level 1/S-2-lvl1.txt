@@ -1,0 +1,170 @@
+If the complaint is admissible, what is the maximum total execution time until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no path where an admissible complaint reaches Complaint closed. If admissible, the flow goes to Case preparation, then Case investigation, then Trial, and ends at Case closed. Complaint closed is only reached on the inadmissible branch via Notify inadmissibility and Archive complaint file.
+
+If the complaint is admissible, which tasks belong to the path with the maximum total execution time until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+For the admissible branch, the gateway Complaint admissible? with yes leads to Case preparation, then Case investigation, then Trial, and finally Case closed. Complaint closed is only on the no branch through Notify inadmissibility and Archive complaint file. Since no admissible execution reaches Complaint closed, there is no valid task path to list.
+
+If the complaint is admissible, what is the minimum total execution time until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no admissible path to Complaint closed. The yes branch from Complaint admissible? goes to Case preparation, Case investigation, Trial, and ends at Case closed. Complaint closed is only reachable from the no branch through Notify inadmissibility and Archive complaint file. Therefore no minimum time to Complaint closed exists for an admissible complaint.
+
+If the complaint is admissible, which tasks belong to the path with the minimum total execution time until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+No admissible execution reaches Complaint closed. After Check admissibility, the yes branch goes to Case preparation, then Case investigation, then Trial, and ends at Case closed. Complaint closed belongs only to the inadmissible branch via Notify inadmissibility and Archive complaint file. So there is no valid minimum time path and therefore no tasks to list.
+
+What is the maximum total execution time starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+Starting from Identify required documents and records places the execution inside the embedded subprocess Document and record collection, which belongs to Case investigation. From there the process can continue through Case investigation to Trial and then to Case closed. Complaint closed is not on that branch at all. It is only reachable on the inadmissible branch of the main process through Notify inadmissibility and Archive complaint file. Therefore no path exists from Identify required documents and records to Complaint closed.
+
+Which tasks belong to the path with the maximum total execution time starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no valid path from Identify required documents and records to Complaint closed. That task is inside Document and record collection within Case investigation, which continues toward Trial and then Case closed. Complaint closed is only reached on the separate inadmissible branch of the main process through Notify inadmissibility and Archive complaint file. Since the target end event is unreachable from the starting task, no maximum time path exists and no tasks can be listed.
+
+What is the minimum total execution time starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no path from Identify required documents and records to Complaint closed. The starting task is inside the Document and record collection subprocess under Case investigation, and that branch proceeds toward Trial and then Case closed. Complaint closed is only on the inadmissible branch of the main process after Notify inadmissibility and Archive complaint file. Because the target is unreachable from the given start task, no minimum total execution time exists.
+
+Which tasks belong to the path with the minimum total execution time starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no valid execution path from Identify required documents and records to Complaint closed. The task belongs to the Document and record collection subprocess inside Case investigation, and that route continues to Trial and then Case closed. Complaint closed is only reachable on the separate inadmissible branch through Notify inadmissibility and Archive complaint file. Since the target end event cannot be reached from the given start task, no minimum time path exists and no tasks can be listed.
+
+If the complaint is admissible, what is the maximum total cost until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no admissible path to Complaint closed. The yes branch from Complaint admissible? goes to Case preparation, then Case investigation, then Trial, and ends at Case closed. Complaint closed is only reached on the no branch through Notify inadmissibility and Archive complaint file. Since no admissible execution reaches Complaint closed, no total cost to that end event exists.
+
+If the complaint is admissible, which tasks belong to the path with the maximum total cost until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+No admissible execution reaches Complaint closed. After Check admissibility, the yes branch goes to Case preparation, then Case investigation, then Trial, and ends at Case closed. Complaint closed is only on the inadmissible branch through Notify inadmissibility and Archive complaint file. Because the target end event is unreachable under the admissible condition, there is no valid maximum cost path and no tasks to list.
+
+If the complaint is admissible, what is the minimum total cost until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no admissible path to Complaint closed. The admissible yes branch leads to Case preparation, Case investigation, Trial, and then Case closed. Complaint closed is only on the inadmissible no branch via Notify inadmissibility and Archive complaint file. Therefore no minimum total cost to Complaint closed exists for an admissible complaint.
+
+If the complaint is admissible, which tasks belong to the path with the minimum total cost until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+No admissible execution reaches Complaint closed. The yes branch after Check admissibility goes through Case preparation, Case investigation, and Trial, ending at Case closed. Complaint closed is only reachable on the no branch through Notify inadmissibility and Archive complaint file. Since the requested target is unreachable under the admissible condition, there is no valid minimum cost path and no tasks to list.
+
+What is the maximum total cost starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no path from Identify required documents and records to Complaint closed. The starting task is inside the Document and record collection subprocess within Case investigation, and that branch can proceed toward Trial and then Case closed. Complaint closed is only reachable on the separate inadmissible branch through Notify inadmissibility and Archive complaint file. Because the target end event is unreachable from the given start task, no maximum total cost exists.
+
+Which tasks belong to the path with the maximum total cost starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no valid path from Identify required documents and records to Complaint closed. That task is inside Document and record collection within Case investigation, and that route continues toward Trial and then Case closed. Complaint closed is only on the separate inadmissible branch through Notify inadmissibility and Archive complaint file. Since the target is unreachable from the given start task, no maximum cost path exists and no tasks can be listed.
+
+What is the minimum total cost starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no path from Identify required documents and records to Complaint closed. The task is part of the Document and record collection subprocess inside Case investigation, and that branch proceeds toward Trial and then Case closed. Complaint closed is only reachable on the separate inadmissible branch through Notify inadmissibility and Archive complaint file. Therefore no minimum total cost exists for the requested start and end points.
+
+Which tasks belong to the path with the minimum total cost starting from "Identify required documents and records" until "Complaint closed"?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no valid execution path from Identify required documents and records to Complaint closed. The task belongs to the Document and record collection subprocess inside Case investigation, and that route continues to Trial and then Case closed. Complaint closed is only reachable on the separate inadmissible branch through Notify inadmissibility and Archive complaint file. Since the target end event cannot be reached from the given start task, no minimum cost path exists and no tasks can be listed.
+
+If the complaint is admissible and until the complaint is closed, which tasks belong to the path that involves the highest number of distinct responsible individuals?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no admissible path to Complaint closed. The admissible yes branch from Complaint admissible? leads to Case preparation, then Case investigation, then Trial, and ends at Case closed. Complaint closed is only on the inadmissible no branch via Notify inadmissibility and Archive complaint file. Since no admissible execution reaches the requested end event, no path exists to evaluate for distinct responsible individuals.
+
+If the complaint is admissible, which responsible individual appears most often on the path until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no admissible path to Complaint closed. The yes branch after Check admissibility goes through Case preparation, Case investigation, and Trial, ending at Case closed. Complaint closed is only reachable on the no branch through Notify inadmissibility and Archive complaint file. Because the requested end event is unreachable under the admissible condition, no responsible individual can be counted on such a path.
+
+If the complaint is admissible, which handoffs occur on the execution path with the highest number of responsibility handoffs until the complaint is closed?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+There is no admissible path to Complaint closed. The admissible branch from Complaint admissible? goes to Case preparation, then Case investigation, then Trial, and ends at Case closed. Complaint closed is only on the inadmissible branch through Notify inadmissibility and Archive complaint file. Since the requested target is unreachable under the admissible condition, there is no execution path on which responsibility handoffs can be evaluated.
