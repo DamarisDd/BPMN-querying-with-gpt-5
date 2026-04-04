@@ -1,0 +1,661 @@
+If the complaint is admissible, what is the maximum total execution time until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+00:000:10:55:00
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?fromLabel ?den ?toLabel WHERE {
+  ?rel a mm:r_Subsequent ; cv:from ?from ; cv:to ?to .
+  OPTIONAL { ?rel mm:a_Denomination ?den }
+  OPTIONAL { ?from rdfs:label ?fromLabel }
+  OPTIONAL { ?to rdfs:label ?toLabel }
+  FILTER(?from = <http://www.omilab.org#Exclusive_Gateway_BPMN-49006-Complaint_admissible?>)
+}
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?label ?time ?refLabel ?type WHERE {
+  VALUES ?sp { :Sub-Process_BPMN-48720-Case_preparation :Sub-Process_BPMN-48678-Case_investigation :Sub-Process_BPMN-48702-Trial }
+  ?sp rdfs:label ?label ; mm:a_Sub-Process_type ?type ; mm:r_Referenced_subprocess ?ref .
+  OPTIONAL { ?ref rdfs:label ?refLabel }
+  OPTIONAL { ?sp mm:a_Execution_time ?time }
+}
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?eventLabel ?boundaryType ?attachedLabel ?nextLabel WHERE {
+  ?event a mm:o_Intermediate_Event_BPMN ; rdfs:label ?eventLabel ; mm:r_Attached_to ?attached ; mm:a_Type_boundary ?boundaryType .
+  ?attached rdfs:label ?attachedLabel .
+  OPTIONAL {
+    ?rel a mm:r_Subsequent ; cv:from ?event ; cv:to ?next .
+    ?next rdfs:label ?nextLabel .
+  }
+  FILTER(?attached IN (:Sub-Process_BPMN-48720-Case_preparation, :Sub-Process_BPMN-48678-Case_investigation, :Sub-Process_BPMN-48702-Trial))
+}
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?modelLabel ?elem ?elemLabel ?type ?time ?fromLabel ?toLabel ?den WHERE {
+  VALUES ?model { :Business_Process_Diagram_BPMN_2_0-Case_preparation :Business_Process_Diagram_BPMN_2_0-Case_investigation :Business_Process_Diagram_BPMN_2_0-Trial <http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Document_+_record_collection> :Business_Process_Diagram_BPMN_2_0-Unreachable_parties_procedure :Business_Process_Diagram_BPMN_2_0-Statement_recording_procedure_ :Business_Process_Diagram_BPMN_2_0-On-site_investigation }
+  ?model rdfs:label ?modelLabel .
+  ?elem cv:described_in ?model ; rdfs:label ?elemLabel ; a ?type .
+  FILTER(?type IN (mm:o_Task_BPMN, mm:o_Sub-Process_BPMN, mm:o_Start_Event_BPMN, mm:o_End_Event_BPMN, mm:o_Exclusive_Gateway_BPMN, mm:o_Non-exclusive_Gateway_BPMN))
+  OPTIONAL { ?elem mm:a_Execution_time ?time }
+  OPTIONAL {
+    ?rel a mm:r_Subsequent ; cv:from ?elem ; cv:to ?to .
+    OPTIONAL { ?to rdfs:label ?toLabel }
+    OPTIONAL { ?rel mm:a_Denomination ?den }
+    BIND(?elemLabel AS ?fromLabel)
+  }
+} ORDER BY ?modelLabel ?elemLabel
+How did you derive this answer?
+
+Register complaint → Check admissibility → Complaint admissible?=yes → Case preparation → Case investigation → Complaint withdrawn → Register withdrawal → Archive complaint file → Complaint closed; before the interrupting boundary event on the ad-hoc subprocess Case investigation, maximize elapsed time by completing all compatible internal elements at most once: in Case preparation, Assign investigation team (00:20:00), Prepare list of witnesses (00:30:00), Contact involved parties (02:00:00); in Case investigation, Document and record collection (longest internal path: Identify required documents and records 00:25:00 + Request documents 00:20:00 + Retrieve existing records 00:25:00 + Review collected documents and records 00:30:00 + Evidence complete?=no + Issue additional request 00:15:00 + Collect missing items 00:30:00 + Prepare evidence set for analysis 00:20:00 = 02:45:00), On-site investigation ad-hoc tasks Document observations (01:00:00) and Collect physical evidence (01:00:00), Statement recording procedure (parallel split/join so max branch to join is 01:00:00, then Compare statements 00:40:00, gateway choose yes for longer path, Flag contradictions 00:25:00, Prepare statement analysis notes 00:30:00 = 02:35:00), Analyze documents and records (00:50:00); plus main-process tasks Register complaint (00:20:00), Check admissibility (00:50:00), Register withdrawal (00:15:00), Archive complaint file (00:20:00). Total = 00:20:00 + 00:50:00 + 02:50:00 + 08:00:00 + 00:15:00 + 00:20:00 = 00:000:10:55:00
+
+If the complaint is admissible, which tasks belong to the path with the maximum total execution time until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Register complaint, Check admissibility, Assign investigation team, Prepare list of witnesses, Contact involved parties, Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Start from Complaint received because no explicit source is given. Enforce the condition at Complaint admissible? by taking the yes branch to Case preparation. Keep the exact target fixed as Complaint closed, so only continuations that can still end at Complaint closed are valid. After the yes branch, the normal continuation through Case preparation → Case investigation → Register findings → Trial cannot reach Complaint closed, so it is discarded. The only valid target-reaching continuation is via the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal → Archive complaint file → Complaint closed. To maximize time before that boundary event, include all compatible internal work that can occur at most once before interruption: in ad-hoc Case preparation, Assign investigation team, Prepare list of witnesses, Contact involved parties; in ad-hoc Case investigation, Document and record collection, On-site investigation, Statement recording procedure, Analyze documents and records. Then expand nested subprocesses and choose the longest internal valid routes: in Document and record collection, take both inclusive branches Request documents and Retrieve existing records, then the longer Evidence complete? = no branch through Issue additional request and Collect missing items before Prepare evidence set for analysis; in On-site investigation include both ad-hoc tasks Document observations and Collect physical evidence; in Statement recording procedure, parallel work includes Interview involved parties and Document statements before Compare statements, then choose the longer Inconsistencies identified? = yes branch through Flag contradictions before Prepare statement analysis notes. Adding the outer tasks before and after these subprocesses yields the maximum-time target-reaching path, so the tasks on that path are Register complaint, Check admissibility, Assign investigation team, Prepare list of witnesses, Contact involved parties, Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+If the complaint is admissible, what is the minimum total execution time until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+00:000:01:45:00
+
+No query methods were called.
+How did you derive this answer?
+
+Start from Complaint received because no explicit source is given. Satisfy the condition by taking Complaint admissible? = yes to Case preparation, and keep the exact target fixed as Complaint closed. After that branch, the normal continuation through Case preparation → Case investigation → Register findings → Trial cannot reach Complaint closed, so it is not a valid candidate. The only continuation that still reaches Complaint closed is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal → Archive complaint file → Complaint closed. For the minimum, trigger that boundary event as early as allowed: since it is attached to an ad-hoc subprocess, it may occur only after at least one internal task or subprocess in Case investigation has completed. Because ad-hoc internal elements may be skipped, choose the shortest compatible internal element of Case investigation, which is Analyze documents and records at 00:50:00; the other internal options are longer (On-site investigation requires at least one 01:00:00 task, Statement recording procedure is longer, and Document and record collection is longer). Case preparation is also ad-hoc, so its internal elements may all be skipped. Sum the required executed tasks: Register complaint 00:20:00 + Check admissibility 00:50:00 + Analyze documents and records 00:50:00 + Register withdrawal 00:15:00 + Archive complaint file 00:20:00 = 00:000:02:35:00
+
+If the complaint is admissible, which tasks belong to the path with the minimum total execution time until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Register complaint, Check admissibility, Analyze documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Start from the main process start because no explicit source is given: Complaint received → Register complaint → Check admissibility → Complaint admissible? The stated condition is satisfied by taking the yes branch to Case preparation. Keep the exact target fixed as Complaint closed. From there, the ordinary forward flow Case preparation → Case investigation → Register findings → Trial ends at Case closed, not Complaint closed, so it is excluded. The only continuation that can still reach Complaint closed is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. For the minimum-time valid path, minimize work before that boundary event. Case preparation is ad-hoc, so all its internal tasks may be skipped. In ad-hoc Case investigation, the boundary event may occur only after at least one internal task or subprocess has completed, so exactly one shortest compatible internal element is needed. Compare candidates: Analyze documents and records = 00:50:00; either On-site investigation task = 01:00:00; Statement recording procedure is longer; Document and record collection is longer. Therefore choose Analyze documents and records as the only internal work before interruption. The resulting minimum valid target-reaching task set is Register complaint, Check admissibility, Analyze documents and records, Register withdrawal, Archive complaint file
+
+What is the maximum total execution time starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+00:000:08:05:00
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the task Identify required documents and records inside the embedded subprocess Document and record collection, which is inside the ad-hoc subprocess Case investigation. The exact target is Complaint closed. From the source onward, keep only continuations that can still end at Complaint closed. The normal continuation after Case investigation goes to Register findings, Trial, and Case closed, so it is discarded because the target is fixed as Complaint closed. The only valid way to reach Complaint closed is through the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. To maximize time from the source before that boundary event, include all compatible remaining work inside Case investigation at most once, respecting modeled dependencies. Within Document and record collection, from Identify required documents and records take both inclusive branches Request documents and Retrieve existing records, then join, then Review collected documents and records, then choose the longer Evidence complete? = no branch through Issue additional request → Collect missing items → Prepare evidence set for analysis. That contributes 00:20:00 + 00:25:00 + 00:30:00 + 00:15:00 + 00:30:00 + 00:20:00 = 00:000:02:20:00 after the source, plus the source task itself 00:25:00, so Document and record collection from the source totals 00:000:02:45:00. Still inside ad-hoc Case investigation, also include On-site investigation with both ad-hoc tasks Document observations 01:00:00 and Collect physical evidence 01:00:00, Statement recording procedure with its longest internal route 02:35:00, and Analyze documents and records 00:50:00. After at least one internal element has completed, the boundary event may occur; for the maximum, let it occur after all compatible internal work is done. Then add Register withdrawal 00:15:00 and Archive complaint file 00:20:00. Total from Identify required documents and records to Complaint closed is 02:45:00 + 02:00:00 + 02:35:00 + 00:50:00 + 00:15:00 + 00:20:00 = 00:000:08:45:00
+
+Which tasks belong to the path with the maximum total execution time starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the explicit task Identify required documents and records. The exact target is Complaint closed. From that source onward, I kept only continuations that can still end at Complaint closed. The normal continuation of Case investigation eventually goes to Register findings, Trial, and Case closed, so it cannot satisfy the fixed target and is discarded. The only valid target-reaching continuation is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal and Archive complaint file to reach Complaint closed. To maximize total time before that boundary event, I included all compatible remaining internal work of the ad-hoc subprocess Case investigation at most once. Starting inside Document and record collection, the modeled dependencies require Identify required documents and records first, then the inclusive split allows both Request documents and Retrieve existing records, then the join, then Review collected documents and records, then the longer gateway branch Evidence complete? = no, which gives Issue additional request, Collect missing items, and Prepare evidence set for analysis. Because Case investigation is ad-hoc, its other internal elements can also occur before interruption: On-site investigation contributes Document observations and Collect physical evidence; Statement recording procedure contributes Interview involved parties and Document statements before Compare statements, then the longer branch through Flag contradictions before Prepare statement analysis notes; Analyze documents and records can also occur. After these compatible internal elements, the boundary event may occur and the process continues with Register withdrawal and Archive complaint file to the fixed target Complaint closed. Therefore the tasks on the maximum-time valid path are Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+What is the minimum total execution time starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+00:000:01:00:00
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the explicit task Identify required documents and records inside Document and record collection, within the ad-hoc subprocess Case investigation. The exact target is Complaint closed. From the source onward, the normal continuation of Case investigation leads to Register findings, Trial, and Case closed, so it is excluded because it cannot reach the fixed target. The only valid continuation to Complaint closed is via the interrupting boundary event Complaint withdrawn attached to Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. Because the boundary event on an ad-hoc subprocess may occur only after at least one internal task or subprocess has completed, and the source task itself is an internal task of Case investigation, the boundary event may occur immediately after Identify required documents and records completes. For the minimum, do not execute any further optional internal work in Document and record collection or elsewhere in Case investigation. Add only the mandatory post-boundary tasks: Identify required documents and records 00:25:00 + Register withdrawal 00:15:00 + Archive complaint file 00:20:00 = 00:000:01:00:00
+
+Which tasks belong to the path with the minimum total execution time starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Identify required documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the explicit task Identify required documents and records. The exact target is Complaint closed. From that source onward, I kept only continuations that can still end at Complaint closed. The ordinary continuation inside Document and record collection and then onward through Case investigation eventually leads to Register findings, Trial, and Case closed, not Complaint closed, so it is discarded. The only valid target-reaching continuation is through the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal and Archive complaint file to reach Complaint closed. Because the source task itself is already one completed internal task inside the ad-hoc subprocess, the boundary event is allowed immediately after it. For the minimum-time valid path, no further internal tasks are needed before interruption. Therefore the task set is Identify required documents and records, Register withdrawal, Archive complaint file
+
+If the complaint is admissible, what is the maximum total cost until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+483.16
+
+No query methods were called.
+How did you derive this answer?
+
+Start from Complaint received because no explicit source is given. Satisfy the condition by taking Complaint admissible? = yes to Case preparation, and keep the exact target fixed as Complaint closed. The ordinary continuation after Case investigation goes to Register findings, Trial, and Case closed, so it is excluded because it cannot reach Complaint closed. The only valid target-reaching continuation is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. To maximize total cost before that boundary event, include all compatible internal work at most once. In ad-hoc Case preparation, include Assign investigation team (10), Prepare list of witnesses (12.5), Contact involved parties (25). In ad-hoc Case investigation, include Document and record collection with its highest-cost valid internal route: Identify required documents and records (13.33), Request documents (10.67), Retrieve existing records (13.33), Review collected documents and records (16), Evidence complete? = no, Issue additional request (8), Collect missing items (16), Prepare evidence set for analysis (10.67), totaling 88. In On-site investigation include Document observations (40) and Collect physical evidence (40). In Statement recording procedure include Interview involved parties (35), Document statements (20), Compare statements (21.33), then choose the higher-cost branch Inconsistencies identified? = yes with Flag contradictions (13.33) instead of Confirm consistency (8), then Prepare statement analysis notes (16), totaling 105.66. Also include Analyze documents and records (20). Add the outer tasks Register complaint (7.33), Check admissibility (30), Register withdrawal (6), Archive complaint file (7.33). Total cost = 7.33 + 30 + 10 + 12.5 + 25 + 88 + 40 + 40 + 105.66 + 20 + 6 + 7.33 = 391.82
+
+If the complaint is admissible, which tasks belong to the path with the maximum total cost until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Register complaint, Check admissibility, Assign investigation team, Prepare list of witnesses, Contact involved parties, Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Start from the main process start because no explicit source is given: Complaint received → Register complaint → Check admissibility → Complaint admissible? The condition is satisfied by taking the yes branch to Case preparation. Keep the exact target fixed as Complaint closed. From there, the ordinary continuation Case preparation → Case investigation → Register findings → Trial reaches Case closed, not Complaint closed, so it is discarded. The only valid target-reaching continuation is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal → Archive complaint file → Complaint closed. To maximize total cost before that boundary event, include all compatible internal work at most once. In ad-hoc Case preparation, all three internal tasks can be included: Assign investigation team, Prepare list of witnesses, Contact involved parties. In ad-hoc Case investigation, include all compatible internal elements: Document and record collection, On-site investigation, Statement recording procedure, and Analyze documents and records. Then expand nested subprocesses and choose the higher-cost internal branches where alternatives exist: in Document and record collection, after Identify required documents and records the inclusive split allows both Request documents and Retrieve existing records, then after Review collected documents and records choose Evidence complete? = no, which adds Issue additional request and Collect missing items before Prepare evidence set for analysis; in On-site investigation include both ad-hoc tasks Document observations and Collect physical evidence; in Statement recording procedure, parallel work includes Interview involved parties and Document statements before Compare statements, then choose Inconsistencies identified? = yes because Flag contradictions costs more than Confirm consistency, and continue to Prepare statement analysis notes. After all compatible internal work, the boundary event may occur and the process continues with Register withdrawal and Archive complaint file to the fixed target Complaint closed. Therefore the tasks on the maximum-cost valid path are Register complaint, Check admissibility, Assign investigation team, Prepare list of witnesses, Contact involved parties, Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+If the complaint is admissible, what is the minimum total cost until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+70.66
+
+No query methods were called.
+How did you derive this answer?
+
+Start from Complaint received because no explicit source is given. Satisfy the condition by taking Complaint admissible? = yes to Case preparation, and keep the exact target fixed as Complaint closed. The ordinary continuation after Case investigation goes to Register findings, Trial, and Case closed, so it is excluded because it cannot reach Complaint closed. The only valid target-reaching continuation is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. For the minimum, trigger that boundary event as early as allowed. Case preparation is ad-hoc, so all its internal tasks may be skipped. In ad-hoc Case investigation, the boundary event may occur only after at least one internal task or subprocess has completed, so choose the cheapest compatible internal element. Compare candidates: Analyze documents and records costs 20; one On-site investigation task costs 40; the cheapest complete Statement recording procedure path is higher; the cheapest Document and record collection path is higher. Therefore choose Analyze documents and records as the only internal work before interruption. Add the mandatory outer tasks Register complaint 7.33, Check admissibility 30, Register withdrawal 6, Archive complaint file 7.33. Total minimum cost = 7.33 + 30 + 20 + 6 + 7.33 = 70.66
+
+If the complaint is admissible, which tasks belong to the path with the minimum total cost until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Register complaint, Check admissibility, Analyze documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Start from the main process start because no explicit source is given: Complaint received → Register complaint → Check admissibility → Complaint admissible? The condition is satisfied by taking the yes branch to Case preparation. Keep the exact target fixed as Complaint closed. From there, the ordinary continuation through Case preparation → Case investigation → Register findings → Trial reaches Case closed, not Complaint closed, so it is discarded. The only valid target-reaching continuation is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal → Archive complaint file → Complaint closed. For the minimum-cost valid path, minimize work before that boundary event. Case preparation is ad-hoc, so its internal tasks may all be skipped. In ad-hoc Case investigation, the boundary event may occur only after at least one internal task or subprocess has completed, so exactly one cheapest compatible internal element is needed. Comparing available options, Analyze documents and records has cost 20, which is cheaper than either On-site investigation task, any complete Statement recording procedure execution, or any complete Document and record collection execution. Therefore the minimum-cost target-reaching path contains only the mandatory outer tasks plus that cheapest internal task: Register complaint, Check admissibility, Analyze documents and records, Register withdrawal, Archive complaint file
+
+What is the maximum total cost starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+391.82
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the explicit task Identify required documents and records inside the embedded subprocess Document and record collection, which is inside the ad-hoc subprocess Case investigation. The exact target is Complaint closed. From the source onward, keep only continuations that can still end at Complaint closed. The normal continuation after Case investigation goes to Register findings, Trial, and Case closed, so it is discarded because the target is fixed as Complaint closed. The only valid way to reach Complaint closed is through the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. To maximize cost from the source before that boundary event, include all compatible remaining work inside Case investigation at most once, respecting modeled dependencies. Within Document and record collection, from Identify required documents and records take both inclusive branches Request documents and Retrieve existing records, then join, then Review collected documents and records, then choose the higher-cost Evidence complete? = no branch through Issue additional request → Collect missing items → Prepare evidence set for analysis. That contributes 10.67 + 13.33 + 16 + 8 + 16 + 10.67 after the source, plus the source task itself 13.33, so Document and record collection from the source totals 88. Still inside ad-hoc Case investigation, also include On-site investigation with both ad-hoc tasks Document observations 40 and Collect physical evidence 40, Statement recording procedure with its higher-cost internal route 105.66, and Analyze documents and records 20. After at least one internal element has completed, the boundary event may occur; for the maximum, let it occur after all compatible internal work is done. Then add Register withdrawal 6 and Archive complaint file 7.33. Total from Identify required documents and records to Complaint closed is 88 + 40 + 40 + 105.66 + 20 + 6 + 7.33 = 306.99
+
+Which tasks belong to the path with the maximum total cost starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the explicit task Identify required documents and records. The exact target is Complaint closed. From that source onward, I kept only continuations that can still end at Complaint closed. The normal continuation of Case investigation eventually goes to Register findings, Trial, and Case closed, so it cannot satisfy the fixed target and is discarded. The only valid target-reaching continuation is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal and Archive complaint file to reach Complaint closed. To maximize total cost before that boundary event, I included all compatible remaining internal work of the ad-hoc subprocess Case investigation at most once. Starting inside Document and record collection, the modeled dependencies require Identify required documents and records first, then the inclusive split allows both Request documents and Retrieve existing records, then the join, then Review collected documents and records, then the higher-cost gateway branch Evidence complete? = no, which gives Issue additional request, Collect missing items, and Prepare evidence set for analysis. Because Case investigation is ad-hoc, its other internal elements can also occur before interruption: On-site investigation contributes Document observations and Collect physical evidence; Statement recording procedure contributes Interview involved parties and Document statements before Compare statements, then the higher-cost branch through Flag contradictions before Prepare statement analysis notes; Analyze documents and records can also occur. After these compatible internal elements, the boundary event may occur and the process continues with Register withdrawal and Archive complaint file to the fixed target Complaint closed. Therefore the tasks on the maximum-cost valid path are Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Document observations, Collect physical evidence, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records, Register withdrawal, Archive complaint file
+
+What is the minimum total cost starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+26.66
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the explicit task Identify required documents and records inside Document and record collection, within the ad-hoc subprocess Case investigation. The exact target is Complaint closed. From the source onward, the normal continuation of Case investigation leads to Register findings, Trial, and Case closed, so it is excluded because it cannot reach the fixed target. The only valid continuation to Complaint closed is via the interrupting boundary event Complaint withdrawn attached to Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. Because the boundary event on an ad-hoc subprocess may occur only after at least one internal task or subprocess has completed, and the source task itself is an internal task of Case investigation, the boundary event may occur immediately after Identify required documents and records completes. For the minimum, do not execute any further optional internal work in Document and record collection or elsewhere in Case investigation. Add only the mandatory post-boundary tasks: Identify required documents and records 13.33 + Register withdrawal 6 + Archive complaint file 7.33 = 26.66
+
+Which tasks belong to the path with the minimum total cost starting from "Identify required documents and records" until "Complaint closed"? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Identify required documents and records, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Source is the explicit task Identify required documents and records. The exact target is Complaint closed. From that source onward, I kept only continuations that can still end at Complaint closed. The ordinary continuation inside Document and record collection and then onward through Case investigation eventually leads to Register findings, Trial, and Case closed, not Complaint closed, so it is discarded. The only valid target-reaching continuation is through the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal and Archive complaint file to reach Complaint closed. Because the source task itself is already one completed internal task inside the ad-hoc subprocess, the boundary event is allowed immediately after it. For the minimum-cost valid path, no further internal tasks are needed before interruption. Therefore the task set is Identify required documents and records, Register withdrawal, Archive complaint file
+
+If the complaint is admissible and until the complaint is closed, which tasks belong to the path that involves the highest number of distinct responsible individuals? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Register complaint, Check admissibility, Prepare list of witnesses, Contact involved parties, Identify required documents and records, Request documents, Retrieve existing records, Review collected documents and records, Issue additional request, Collect missing items, Prepare evidence set for analysis, Collect physical evidence, Register withdrawal, Archive complaint file
+
+No query methods were called.
+How did you derive this answer?
+
+Start from the main process start because no explicit source is given: Complaint received → Register complaint → Check admissibility → Complaint admissible? The condition is satisfied by taking the yes branch to Case preparation. Keep the exact target fixed as Complaint closed. The ordinary continuation through Register findings and Trial reaches Case closed, not Complaint closed, so it is discarded. The only valid target-reaching continuation is the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, followed by Register withdrawal → Archive complaint file → Complaint closed. I then compared valid target-reaching paths by the number of distinct responsible individuals on their tasks, not by time or cost. To maximize that count, include compatible tasks that add new people and avoid tasks that only reuse already counted people. The distinct individuals available on valid paths are Michael Turner from Register complaint, Adrian Walker from Check admissibility, Rachel Bennett and Victor Hayes from Case preparation tasks, Bianca Hayes and Samuel Grant from Document and record collection / analysis tasks, Marinette Cheng from On-site investigation, and Irene Palmer from Archive complaint file. A maximum of 8 distinct individuals is reachable. One valid path achieving that maximum is: Register complaint (Michael Turner), Check admissibility (Adrian Walker), Prepare list of witnesses (Rachel Bennett), Contact involved parties (Victor Hayes and Rachel Bennett), Identify required documents and records (Bianca Hayes), Request documents (Samuel Grant), Retrieve existing records (Samuel Grant), Review collected documents and records (Bianca Hayes), Issue additional request (Bianca Hayes), Collect missing items (Samuel Grant), Prepare evidence set for analysis (Bianca Hayes), Collect physical evidence (Marinette Cheng), Register withdrawal (Victor Hayes), Archive complaint file (Irene Palmer). This path still reaches Complaint closed via the Case investigation boundary event and covers the highest number of distinct responsible individuals.
+
+If the complaint is admissible, which responsible individual appears most often on the path until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Bianca Hayes, Samuel Grant, Victor Hayes
+
+No query methods were called.
+How did you derive this answer?
+
+Start from Complaint received because no explicit source is given. Enforce the condition by taking Complaint admissible? = yes to Case preparation, and keep the exact target fixed as Complaint closed. The normal continuation through Register findings and Trial ends at Case closed, so it is excluded. The only valid target-reaching continuation is via the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. I then considered all valid target-reaching paths through the ad-hoc subprocesses, where internal tasks may be included at most once if compatible. To maximize how often a responsible individual appears, include all compatible tasks before the boundary event. Counting task-responsibility appearances on that maximum-coverage valid path gives: Bianca Hayes on Identify required documents and records, Review collected documents and records, Issue additional request, Prepare evidence set for analysis, Interview involved parties, Document statements, Compare statements, Flag contradictions, Prepare statement analysis notes, Analyze documents and records = 10 appearances; Samuel Grant on Request documents, Retrieve existing records, Collect missing items = 3 appearances; Victor Hayes on Contact involved parties and Register withdrawal = 2 appearances; Rachel Bennett on Assign investigation team, Prepare list of witnesses, Contact involved parties = 3 appearances; Marinette Cheng on two on-site tasks = 2; others appear once. Because Contact involved parties, Interview involved parties, Document statements, and Compare statements each have multiple responsible individuals, counting appearances per responsible individual over the valid maximum path shows Bianca Hayes has the highest count. Therefore the correct result is Bianca Hayes
+
+If the complaint is admissible, which handoffs occur on the execution path with the highest number of responsibility handoffs until the complaint is closed? To answer the question:
+
+
+Identify the source, the stated condition, if applicable, and the exact target; if no explicit source is given, begin from the start of the relevant process or subprocess.
+
+Keep the exact target fixed throughout the reasoning.
+
+Treat the condition as satisfied once the path passes through the required gateway outcome; after that, any later continuation, including interrupting or non-interrupting boundary-event continuations, remains eligible if it can still reach the exact target.
+
+From the selected branch onward, trace every reachable continuation through tasks, subprocesses, nested subprocesses and boundary-event continuations.
+
+Keep a candidate path only if it ends at the exact target named in the question.
+
+For ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability.
+
+In ad-hoc subprocesses, do not require internal sequence flows to prove internal reachability; internal tasks or subprocesses may be skipped or occur at most once, while modeled dependencies must still be respected.
+
+If a boundary event is attached to an ad-hoc subprocess, it may occur after one or more compatible internal tasks or subprocesses have completed.
+
+Use query methods to inspect sequence flows, boundary events, subprocess contents and target reachability before answering.
+
+For each valid target-reaching path, compute or extract the requested result.
+
+Compare only the valid target-reaching paths and return the result from the best one.
+
+Michael Turner → Adrian Walker, Adrian Walker → Rachel Bennett, Rachel Bennett → Victor Hayes, Victor Hayes → Bianca Hayes, Bianca Hayes → Samuel Grant, Samuel Grant → Bianca Hayes, Bianca Hayes → Samuel Grant, Samuel Grant → Bianca Hayes, Bianca Hayes → Marinette Cheng, Marinette Cheng → Victor Hayes, Victor Hayes → Irene Palmer
+
+No query methods were called.
+How did you derive this answer?
+
+Start from Complaint received because no explicit source is given. Satisfy the condition by taking Complaint admissible? = yes to Case preparation, and keep the exact target fixed as Complaint closed. The ordinary continuation through Register findings and Trial ends at Case closed, so it is excluded. The only valid target-reaching continuation is via the interrupting boundary event Complaint withdrawn attached to the ad-hoc subprocess Case investigation, then Register withdrawal → Archive complaint file → Complaint closed. I then searched for the valid target-reaching path that maximizes responsibility handoffs, counting a handoff whenever consecutive executed tasks have no shared responsible individual and the responsible individual changes. To maximize handoffs, choose one responsible individual per multi-responsible task so that consecutive tasks alternate as much as possible, while still following a valid target-reaching path and respecting modeled dependencies inside embedded subprocesses. A maximizing path is Register complaint (Michael Turner) → Check admissibility (Adrian Walker) → Prepare list of witnesses (Rachel Bennett) → Contact involved parties (Victor Hayes) → Identify required documents and records (Bianca Hayes) → Request documents (Samuel Grant) → Review collected documents and records (Bianca Hayes) → Collect missing items (Samuel Grant) → Prepare evidence set for analysis (Bianca Hayes) → Collect physical evidence (Marinette Cheng) → Register withdrawal (Victor Hayes) → Archive complaint file (Irene Palmer), with Retrieve existing records optionally inserted between Samuel Grant and Bianca Hayes without adding a new handoff because it keeps Samuel Grant. This yields the handoffs Michael Turner → Adrian Walker, Adrian Walker → Rachel Bennett, Rachel Bennett → Victor Hayes, Victor Hayes → Bianca Hayes, Bianca Hayes → Samuel Grant, Samuel Grant → Bianca Hayes, Bianca Hayes → Samuel Grant, Samuel Grant → Bianca Hayes, Bianca Hayes → Marinette Cheng, Marinette Cheng → Victor Hayes, Victor Hayes → Irene Palmer.
