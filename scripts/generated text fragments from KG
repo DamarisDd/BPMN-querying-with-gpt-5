@@ -1,0 +1,2094 @@
+{
+    "deprecations": [],
+    "objects": [
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "00776346-43f9-5a22-9913-e39395e04221",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49713-Victor_Hayes_0",
+                "document_id": "http://www.omilab.org#Performer-49713-Victor_Hayes",
+                "text": "Performer-49713-Victor_Hayes: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Case administration. - has hourly wage: 30."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "026857ae-fe1e-58aa-ab41-4c704b2fefae",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48771-Case_investigation-Register_findings__0",
+                "document_id": "http://www.omilab.org#Subsequent-48771-Case_investigation-Register_findings_",
+                "text": "Subsequent-48771-Case_investigation-Register_findings_: - is a r_Subsequent. - is the default process path: No. - starts from Case investigation. - source is a o_Sub-Process_BPMN. - goes to Register findings . - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "03ad56e3-e361-5406-9a68-a09a1750f848",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48798-Assign_investigation_team_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48798-Assign_investigation_team",
+                "text": "Task_BPMN-48798-Assign_investigation_team: - is a o_Task_BPMN. - is described in: Case preparation. - is inside: Preparation procedure. - is carried out by: Rachel Bennett. - within unit: Case administration. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 10. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "061798d0-3fee-5466-a7e1-2dc6adfa2cf8",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-48793-Case_file-Trial_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-48793-Case_file-Trial",
+                "text": "Data_Association_BPMN-48793-Case_file-Trial: - is a r_Data_Association_BPMN. - starts from Case file. - source is a o_Data_Object_BPMN. - goes to Trial. - target is a o_Sub-Process_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325821,
+            "id": "07c07d54-770b-5177-8705-c217d139cbb7",
+            "lastUpdateTimeUnix": 1774986325821,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Start_Event_BPMN-49465-Missing_parties_detected_0",
+                "document_id": "http://www.omilab.org#Start_Event_BPMN-49465-Missing_parties_detected",
+                "text": "Start_Event_BPMN-49465-Missing_parties_detected: - is a o_Start_Event_BPMN. - is inside: Unreachable parties procedure. - has model type: Top-level."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "08e19b01-307f-5072-9058-a789ce8187c4",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49314-Document_observations_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49314-Document_observations",
+                "text": "Task_BPMN-49314-Document_observations: - is a o_Task_BPMN. - is described in: On-site investigation. - is inside: On-site investigation procedure. - is carried out by: Marinette Cheng. - within unit: Investigation & evidence. - has execution time: 00:000:01:00:00. - has loop type: Not specified. - has sequential execution: No. - costs 40. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "091f0b93-8401-5768-ac18-fbc69e837024",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49671-Bianca_Hayes_0",
+                "document_id": "http://www.omilab.org#Performer-49671-Bianca_Hayes",
+                "text": "Performer-49671-Bianca_Hayes: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Investigation & evidence. - has hourly wage: 32."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "0933b758-984b-5252-bbfa-c4f9fccfc7e5",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49009-Register_complaint-Check_admissibility_0",
+                "document_id": "http://www.omilab.org#Subsequent-49009-Register_complaint-Check_admissibility",
+                "text": "Subsequent-49009-Register_complaint-Check_admissibility: - is a r_Subsequent. - is the default process path: No. - starts from Register complaint. - source is a o_Task_BPMN. - goes to Check admissibility. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "0a47139b-f6e5-56e9-8250-862ae5362a81",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Start_Event_BPMN-48984-Trial_initiated_0",
+                "document_id": "http://www.omilab.org#Start_Event_BPMN-48984-Trial_initiated",
+                "text": "Start_Event_BPMN-48984-Trial_initiated: - is a o_Start_Event_BPMN. - is inside: Trial procedure. - has model type: Top-level."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "0b533aa9-d100-554e-b96c-3ded82b02963",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#End_Event_BPMN-48759-Case_closed_0",
+                "document_id": "http://www.omilab.org#End_Event_BPMN-48759-Case_closed",
+                "text": "End_Event_BPMN-48759-Case_closed: - is a o_End_Event_BPMN. - has model type: local."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "0bf68ab4-6b84-5806-b457-3a9b02196aa4",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-50669-Anna_Collins_0",
+                "document_id": "http://www.omilab.org#Performer-50669-Anna_Collins",
+                "text": "Performer-50669-Anna_Collins: - is a o_Performer. - belongs to sub-unit: Registry. - has hourly wage: 20."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "0e6e0265-acbc-5fba-80ca-a738bb2eec6d",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49475-Review_existing_contact_information-Reattempt_formal_notification_0",
+                "document_id": "http://www.omilab.org#Subsequent-49475-Review_existing_contact_information-Reattempt_formal_notification",
+                "text": "Subsequent-49475-Review_existing_contact_information-Reattempt_formal_notification: - is a r_Subsequent. - is the default process path: No. - starts from Review existing contact information. - source is a o_Task_BPMN. - goes to Reattempt formal notification. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "0e9d8e0d-0771-5ac5-9353-5ad955e57fef",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49479-Reattempt_formal_notification-Party_reached?_0",
+                "document_id": "http://www.omilab.org#Subsequent-49479-Reattempt_formal_notification-Party_reached?",
+                "text": "Subsequent-49479-Reattempt_formal_notification-Party_reached?: - is a r_Subsequent. - is the default process path: No. - starts from Reattempt formal notification. - source is a o_Task_BPMN. - goes to Party reached?. - target is a o_Exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "100a8ec8-d246-5fee-a09b-f3d3bdb6f4c4",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-49381-Document_and_record_collection-Documents_and_records_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-49381-Document_and_record_collection-Documents_and_records",
+                "text": "Data_Association_BPMN-49381-Document_and_record_collection-Documents_and_records: - is a r_Data_Association_BPMN. - starts from Document and record collection. - source is a o_Sub-Process_BPMN. - goes to Documents and records. - target is a o_Data_Object_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "11584284-cbed-54c7-a541-f9649ef9c6e4",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-49693-Records_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-49693-Records",
+                "text": "Organizational_Unit-49693-Records: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "11f870cc-6872-5e96-84e5-6b5ce1dcdd32",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48778-Trial-Case_closed_0",
+                "document_id": "http://www.omilab.org#Subsequent-48778-Trial-Case_closed",
+                "text": "Subsequent-48778-Trial-Case_closed: - is a r_Subsequent. - is the default process path: No. - starts from Trial. - source is a o_Sub-Process_BPMN. - goes to Case closed. - target is a o_End_Event_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "12adfa1f-5b13-5ce3-966b-8e4e22b70306",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49636-Rachel_Bennett_0",
+                "document_id": "http://www.omilab.org#Performer-49636-Rachel_Bennett",
+                "text": "Performer-49636-Rachel_Bennett: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Case administration. - has hourly wage: 30."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "1357c1f5-b5a9-534c-b934-89a5febbe438",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48784-Case_preparation-Case_investigation_0",
+                "document_id": "http://www.omilab.org#Subsequent-48784-Case_preparation-Case_investigation",
+                "text": "Subsequent-48784-Case_preparation-Case_investigation: - is a r_Subsequent. - is the default process path: No. - starts from Case preparation. - source is a o_Sub-Process_BPMN. - goes to Case investigation. - target is a o_Sub-Process_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326126,
+            "id": "1433b8db-071d-5812-bec3-ef07d8178f5a",
+            "lastUpdateTimeUnix": 1774986326126,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-51115-Interview_involved_parties_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-51115-Interview_involved_parties",
+                "text": "Task_BPMN-51115-Interview_involved_parties: - is a o_Task_BPMN. - is described in: Statement recording procedure . - is inside: Statement recording procedure . - is carried out by: Bianca Hayes. - is carried out by: Alexander Moore. - within unit: Investigation & evidence. - has execution time: 00:000:01:00:00. - has loop type: Multi-instance. - has sequential execution: No. - has cardinality: 3. - costs 35. - has task type: Manual."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "149c2040-4fa2-5d90-90fd-5be9cff1be9d",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49665-Samuel_Grant_0",
+                "document_id": "http://www.omilab.org#Performer-49665-Samuel_Grant",
+                "text": "Performer-49665-Samuel_Grant: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Investigation & evidence. - has hourly wage: 32."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "16cf221b-4a59-530a-a25f-4c620199d7a7",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-49680-Hearing_support_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-49680-Hearing_support",
+                "text": "Organizational_Unit-49680-Hearing_support: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "17a13ff1-00a1-5487-918b-21aa0623aaff",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-50678-Adrian_Walker_0",
+                "document_id": "http://www.omilab.org#Performer-50678-Adrian_Walker",
+                "text": "Performer-50678-Adrian_Walker: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Admissibility. - has hourly wage: 36."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "17d3b97b-3b8b-5cb2-bb33-13b13f762f42",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#End_Event_BPMN-49388-Collection_completed_0",
+                "document_id": "http://www.omilab.org#End_Event_BPMN-49388-Collection_completed",
+                "text": "End_Event_BPMN-49388-Collection_completed: - is a o_End_Event_BPMN. - is inside: Document and record collection procedure. - has model type: local."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "18e02579-b12f-566a-ba07-4873bcd29d30",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49013-Complaint_admissible?-Notify_inadmissibility_0",
+                "document_id": "http://www.omilab.org#Subsequent-49013-Complaint_admissible?-Notify_inadmissibility",
+                "text": "Subsequent-49013-Complaint_admissible?-Notify_inadmissibility: - is a r_Subsequent. - has transition label: no. - is the default process path: No. - starts from Complaint admissible?. - source is a o_Exclusive_Gateway_BPMN. - goes to Notify inadmissibility. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "1b1f7e5a-86c6-5786-9fe6-1aeaba3b6613",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50722-Field_investigating_officer_0",
+                "document_id": "http://www.omilab.org#Role-50722-Field_investigating_officer",
+                "text": "Role-50722-Field_investigating_officer: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "1c50e6fe-a342-5b69-8ca2-f5cfd7cd77db",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51158-Inconsistencies_identified?-Flag_contradictions_0",
+                "document_id": "http://www.omilab.org#Subsequent-51158-Inconsistencies_identified?-Flag_contradictions",
+                "text": "Subsequent-51158-Inconsistencies_identified?-Flag_contradictions: - is a r_Subsequent. - has transition label: yes. - is the default process path: No. - starts from Inconsistencies identified?. - source is a o_Exclusive_Gateway_BPMN. - goes to Flag contradictions. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "1c671499-8060-51ea-980f-de74f5e55b9a",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-51127-Non-exclusive_Gateway_BPMN-49238_0",
+                "document_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-51127-Non-exclusive_Gateway_BPMN-49238",
+                "text": "Non-exclusive_Gateway_BPMN-51127-Non-exclusive_Gateway_BPMN-49238: - is a o_Non-exclusive_Gateway_BPMN. - is inside: Statement recording procedure . - has gateway type: Parallel."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "1ec66c87-7069-5a55-ae59-168820b5d2c9",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49413-Issue_additional_request-Collect_missing_items_0",
+                "document_id": "http://www.omilab.org#Subsequent-49413-Issue_additional_request-Collect_missing_items",
+                "text": "Subsequent-49413-Issue_additional_request-Collect_missing_items: - is a r_Subsequent. - is the default process path: No. - starts from Issue additional request. - source is a o_Task_BPMN. - goes to Collect missing items. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325974,
+            "id": "1f17cd1f-30d9-5a4e-9a42-24ed611822fc",
+            "lastUpdateTimeUnix": 1774986325974,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Trial_0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Trial",
+                "text": "Business_Process_Diagram_BPMN_2_0-Trial: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "1f2b1f1e-25b8-56b1-bd1f-3db1b17cddd1",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Case_investigation_0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Case_investigation",
+                "text": "Business_Process_Diagram_BPMN_2_0-Case_investigation: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "22748014-a891-5649-a861-d096b5be7399",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49451-Conduct_trial-Judicial_decision_0",
+                "document_id": "http://www.omilab.org#Subsequent-49451-Conduct_trial-Judicial_decision",
+                "text": "Subsequent-49451-Conduct_trial-Judicial_decision: - is a r_Subsequent. - is the default process path: No. - starts from Conduct trial. - source is a o_Task_BPMN. - goes to Judicial decision. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "265fef85-39ba-520f-be5b-1a36d839640b",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48774-Complaint_withdrawn-Register_withdrawal_0",
+                "document_id": "http://www.omilab.org#Subsequent-48774-Complaint_withdrawn-Register_withdrawal",
+                "text": "Subsequent-48774-Complaint_withdrawn-Register_withdrawal: - is a r_Subsequent. - is the default process path: No. - starts from Complaint withdrawn. - source is a o_Intermediate_Event_BPMN. - goes to Register withdrawal. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "26b7c28f-faa8-58e0-b64a-e444066ae23d",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50731-Hearing_Clerk_0",
+                "document_id": "http://www.omilab.org#Role-50731-Hearing_Clerk",
+                "text": "Role-50731-Hearing_Clerk: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326126,
+            "id": "294050c8-8715-58cb-bfa9-c799820ee134",
+            "lastUpdateTimeUnix": 1774986326126,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49480-Record_notification_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49480-Record_notification",
+                "text": "Task_BPMN-49480-Record_notification: - is a o_Task_BPMN. - is described in: Unreachable parties procedure. - is inside: Unreachable parties procedure. - is carried out by: Victor Hayes. - within unit: Case administration. - has execution time: 00:000:00:10:00. - has loop type: Not specified. - has sequential execution: No. - costs 4. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "29fc9599-9d95-504e-87d4-67b062d9de1d",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-49627-Admissibility_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-49627-Admissibility",
+                "text": "Organizational_Unit-49627-Admissibility: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "2d087c3a-83ec-5d2f-ab1a-b752bb38d310",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49005-Archive_case_file-Case_adjudicated_0",
+                "document_id": "http://www.omilab.org#Subsequent-49005-Archive_case_file-Case_adjudicated",
+                "text": "Subsequent-49005-Archive_case_file-Case_adjudicated: - is a r_Subsequent. - is the default process path: No. - starts from Archive case file. - source is a o_Task_BPMN. - goes to Case adjudicated. - target is a o_End_Event_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "2ed8bdd5-d15d-5d46-ad8a-2e92b2da2ab7",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49017-Notify_inadmissibility-Archive_complaint_file_0",
+                "document_id": "http://www.omilab.org#Subsequent-49017-Notify_inadmissibility-Archive_complaint_file",
+                "text": "Subsequent-49017-Notify_inadmissibility-Archive_complaint_file: - is a r_Subsequent. - is the default process path: No. - starts from Notify inadmissibility. - source is a o_Task_BPMN. - goes to Archive complaint file. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326612,
+            "id": "2f195f2f-5c90-5b01-a917-8be0f89c0713",
+            "lastUpdateTimeUnix": 1774986326612,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50746-Records_officer_0",
+                "document_id": "http://www.omilab.org#Role-50746-Records_officer",
+                "text": "Role-50746-Records_officer: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "300c38ff-cb13-5cfe-96f3-7e67b13d481f",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-51110-Prepare_list_of_witnesses-Witnesses_info_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-51110-Prepare_list_of_witnesses-Witnesses_info",
+                "text": "Data_Association_BPMN-51110-Prepare_list_of_witnesses-Witnesses_info: - is a r_Data_Association_BPMN. - starts from Prepare list of witnesses. - source is a o_Task_BPMN. - goes to Witnesses info. - target is a o_Data_Object_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "339a7afd-ba5c-57a9-a04b-a3bec28eecf1",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-51139-Inconsistencies_identified?_0",
+                "document_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-51139-Inconsistencies_identified?",
+                "text": "Exclusive_Gateway_BPMN-51139-Inconsistencies_identified?: - is a o_Exclusive_Gateway_BPMN. - is inside: Statement recording procedure . - has gateway type: Data-based (without marker)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "381f662c-e9e6-53e2-8d61-a5f7220e20f9",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-49621-Registry_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-49621-Registry",
+                "text": "Organizational_Unit-49621-Registry: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "3823d4cd-98dc-5388-ac8e-247169ef06b0",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49498-Record_notification-Missing_parties_handling_completed_0",
+                "document_id": "http://www.omilab.org#Subsequent-49498-Record_notification-Missing_parties_handling_completed",
+                "text": "Subsequent-49498-Record_notification-Missing_parties_handling_completed: - is a r_Subsequent. - is the default process path: No. - starts from Record notification. - source is a o_Task_BPMN. - goes to Missing parties handling completed. - target is a o_End_Event_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325974,
+            "id": "3a5aa5d7-0bcd-5ef2-a6e2-555b8abb0439",
+            "lastUpdateTimeUnix": 1774986325974,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Unreachable_parties_procedure_0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Unreachable_parties_procedure",
+                "text": "Business_Process_Diagram_BPMN_2_0-Unreachable_parties_procedure: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "3a72060e-8a48-5bed-8a27-1fab3c7ffee3",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49395-Review_collected_documents_and_records_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49395-Review_collected_documents_and_records",
+                "text": "Task_BPMN-49395-Review_collected_documents_and_records: - is a o_Task_BPMN. - is described in: Document & record collection. - is inside: Document and record collection procedure. - is carried out by: Bianca Hayes. - within unit: Investigation & evidence. - has execution time: 00:000:00:30:00. - has loop type: Not specified. - has sequential execution: No. - costs 16. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "3b53a57b-2db5-5ac7-92a3-c46c584f84f3",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49360-Required_sources?-Retrieve_existing_records_0",
+                "document_id": "http://www.omilab.org#Subsequent-49360-Required_sources?-Retrieve_existing_records",
+                "text": "Subsequent-49360-Required_sources?-Retrieve_existing_records: - is a r_Subsequent. - is the default process path: Yes. - starts from Required sources?. - source is a o_Non-exclusive_Gateway_BPMN. - goes to Retrieve existing records. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "3ea46326-feee-50e2-9fd7-3b19e3f16b4f",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Main_judicial_process_0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Main_judicial_process",
+                "text": "Business_Process_Diagram_BPMN_2_0-Main_judicial_process: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "3feaf495-30e8-592a-a58a-cf0d0b52629c",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49448-Conduct_trial_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49448-Conduct_trial",
+                "text": "Task_BPMN-49448-Conduct_trial: - is a o_Task_BPMN. - is described in: Trial. - is inside: Trial procedure. - is carried out by: Andrew Marshall. - within unit: Adjudication. - has execution time: 00:000:01:30:00. - has loop type: Not specified. - has sequential execution: No. - costs 90. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "41089161-5f7a-521c-ba6e-13bf5de34678",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-49351-Required_sources?_0",
+                "document_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-49351-Required_sources?",
+                "text": "Non-exclusive_Gateway_BPMN-49351-Required_sources?: - is a o_Non-exclusive_Gateway_BPMN. - is inside: Document and record collection procedure. - has gateway type: Inclusive."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "424ed4ed-6601-58c0-a1c5-e4647274d32f",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Sub-Process_BPMN-48720-Case_preparation_0",
+                "document_id": "http://www.omilab.org#Sub-Process_BPMN-48720-Case_preparation",
+                "text": "Sub-Process_BPMN-48720-Case_preparation: - is a o_Sub-Process_BPMN. - is described in: Main judicial process. - references subprocess: Case preparation. - has loop type: Not specified. - has sequential execution: No. - has subprocess type: Ad-Hoc."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "43faf8e3-c9b4-5da7-8dcb-4c87a6dc7bd2",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-50684-Alexander_Moore_0",
+                "document_id": "http://www.omilab.org#Performer-50684-Alexander_Moore",
+                "text": "Performer-50684-Alexander_Moore: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Investigation & evidence. - has hourly wage: 32."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "45810722-22de-597e-96ea-7a186b9a6a78",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49354-Required_sources?-Request_documents_0",
+                "document_id": "http://www.omilab.org#Subsequent-49354-Required_sources?-Request_documents",
+                "text": "Subsequent-49354-Required_sources?-Request_documents: - is a r_Subsequent. - has transition label: additional resources. - is the default process path: No. - starts from Required sources?. - source is a o_Non-exclusive_Gateway_BPMN. - goes to Request documents. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "499d6b6d-a2b3-59e9-b470-75b992b501ef",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49356-Retrieve_existing_records_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49356-Retrieve_existing_records",
+                "text": "Task_BPMN-49356-Retrieve_existing_records: - is a o_Task_BPMN. - is described in: Document & record collection. - is inside: Document and record collection procedure. - is carried out by: Samuel Grant. - within unit: Investigation & evidence. - has execution time: 00:000:00:25:00. - has loop type: Not specified. - has sequential execution: No. - costs 13.33. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "4e7ca084-a253-5a38-b91d-8549aef864b9",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48978-Judicial_decision_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48978-Judicial_decision",
+                "text": "Task_BPMN-48978-Judicial_decision: - is a o_Task_BPMN. - is described in: Trial. - is inside: Trial procedure. - is carried out by: Andrew Marshall. - within unit: Adjudication. - has execution time: 00:000:01:00:00. - has loop type: Not specified. - has sequential execution: No. - costs 60. - has task type: Business rule."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "4e968acd-e3ef-58cc-9241-221aefc44cae",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51159-Non-exclusive_Gateway_BPMN-49238-Compare_statements_0",
+                "document_id": "http://www.omilab.org#Subsequent-51159-Non-exclusive_Gateway_BPMN-49238-Compare_statements",
+                "text": "Subsequent-51159-Non-exclusive_Gateway_BPMN-49238-Compare_statements: - is a r_Subsequent. - is the default process path: No. - starts from Non-exclusive Gateway (BPMN)-49238. - source is a o_Non-exclusive_Gateway_BPMN. - goes to Compare statements. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "52c0a6a4-0022-5cc1-b7de-ab8436567e57",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51154-Document_statements-Non-exclusive_Gateway_BPMN-49238_0",
+                "document_id": "http://www.omilab.org#Subsequent-51154-Document_statements-Non-exclusive_Gateway_BPMN-49238",
+                "text": "Subsequent-51154-Document_statements-Non-exclusive_Gateway_BPMN-49238: - is a r_Subsequent. - is the default process path: No. - starts from Document statements. - source is a o_Task_BPMN. - goes to Non-exclusive Gateway (BPMN)-49238. - target is a o_Non-exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "53e65f66-a345-51a4-aea8-572726f4dbcd",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49342-Identify_required_documents_and_records_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49342-Identify_required_documents_and_records",
+                "text": "Task_BPMN-49342-Identify_required_documents_and_records: - is a o_Task_BPMN. - is described in: Document & record collection. - is inside: Document and record collection procedure. - is carried out by: Bianca Hayes. - within unit: Investigation & evidence. - has execution time: 00:000:00:25:00. - has loop type: Not specified. - has sequential execution: No. - costs 13.33. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "5491786b-9b30-5264-ab3f-0d1ad52f610c",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Sub-Process_BPMN-48726-Unreachable_parties_procedure_0",
+                "document_id": "http://www.omilab.org#Sub-Process_BPMN-48726-Unreachable_parties_procedure",
+                "text": "Sub-Process_BPMN-48726-Unreachable_parties_procedure: - is a o_Sub-Process_BPMN. - is described in: Main judicial process. - references subprocess: Unreachable parties procedure. - has loop type: Not specified. - has sequential execution: No. - has subprocess type: Embedded."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325974,
+            "id": "556795b1-6e7b-554d-ac31-8202646e9705",
+            "lastUpdateTimeUnix": 1774986325974,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49014-Archive_complaint_file_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49014-Archive_complaint_file",
+                "text": "Task_BPMN-49014-Archive_complaint_file: - is a o_Task_BPMN. - is described in: Main judicial process. - is carried out by: Irene Palmer. - within unit: Records. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 7.33. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "557d3921-361b-5bc7-8749-5d0abbb2c034",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Sub-Process_BPMN-48702-Trial_0",
+                "document_id": "http://www.omilab.org#Sub-Process_BPMN-48702-Trial",
+                "text": "Sub-Process_BPMN-48702-Trial: - is a o_Sub-Process_BPMN. - is described in: Main judicial process. - references subprocess: Trial. - has loop type: Not specified. - has sequential execution: No. - has subprocess type: Embedded."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325821,
+            "id": "574cbb24-4060-5fc7-826a-2880abfb15cf",
+            "lastUpdateTimeUnix": 1774986325821,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-On-site_investigation_0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-On-site_investigation",
+                "text": "Business_Process_Diagram_BPMN_2_0-On-site_investigation: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "5981fe26-c2a6-5646-b26c-10ece5bc3d60",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Sub-Process_BPMN-48678-Case_investigation_0",
+                "document_id": "http://www.omilab.org#Sub-Process_BPMN-48678-Case_investigation",
+                "text": "Sub-Process_BPMN-48678-Case_investigation: - is a o_Sub-Process_BPMN. - is described in: Main judicial process. - references subprocess: Case investigation. - has loop type: Not specified. - has sequential execution: No. - has subprocess type: Ad-Hoc."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325821,
+            "id": "59fedf99-8bd6-5e6f-941f-9115a7997a7d",
+            "lastUpdateTimeUnix": 1774986325821,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-50702-Andrew_Marshall_0",
+                "document_id": "http://www.omilab.org#Performer-50702-Andrew_Marshall",
+                "text": "Performer-50702-Andrew_Marshall: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Adjudication. - has hourly wage: 60."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "6226bf61-e9a3-5248-8eea-9c5da67ce87e",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49346-Request_documents_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49346-Request_documents",
+                "text": "Task_BPMN-49346-Request_documents: - is a o_Task_BPMN. - is described in: Document & record collection. - is inside: Document and record collection procedure. - is carried out by: Samuel Grant. - within unit: Investigation & evidence. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 10.67. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "6279f6a6-e2e6-5393-be3e-e38e032654d4",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-50699-Adjudication_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-50699-Adjudication",
+                "text": "Organizational_Unit-50699-Adjudication: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "6303ca35-296b-5199-aa09-904742674d3f",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-50705-Olivia_Carter_0",
+                "document_id": "http://www.omilab.org#Performer-50705-Olivia_Carter",
+                "text": "Performer-50705-Olivia_Carter: - is a o_Performer. - belongs to sub-unit: Adjudication. - has hourly wage: 60."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326504,
+            "id": "6380ee0b-ca14-5d68-965b-a620709c731c",
+            "lastUpdateTimeUnix": 1774986326504,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51155-Inconsistencies_identified?-Confirm_consistency_0",
+                "document_id": "http://www.omilab.org#Subsequent-51155-Inconsistencies_identified?-Confirm_consistency",
+                "text": "Subsequent-51155-Inconsistencies_identified?-Confirm_consistency: - is a r_Subsequent. - has transition label: no. - is the default process path: No. - starts from Inconsistencies identified?. - source is a o_Exclusive_Gateway_BPMN. - goes to Confirm consistency. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "65f18563-73b2-5821-86d2-fa8d3e59238c",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#End_Event_BPMN-49495-Missing_parties_handling_completed_0",
+                "document_id": "http://www.omilab.org#End_Event_BPMN-49495-Missing_parties_handling_completed",
+                "text": "End_Event_BPMN-49495-Missing_parties_handling_completed: - is a o_End_Event_BPMN. - is inside: Unreachable parties procedure. - has model type: local."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326612,
+            "id": "65f6d401-71d9-5831-a99a-86679fe109c0",
+            "lastUpdateTimeUnix": 1774986326612,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50740-Filling_clerk_0",
+                "document_id": "http://www.omilab.org#Role-50740-Filling_clerk",
+                "text": "Role-50740-Filling_clerk: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326504,
+            "id": "6717ec06-0790-51d7-b477-7bdd26e2ff49",
+            "lastUpdateTimeUnix": 1774986326504,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51151-Non-exclusive_Gateway_BPMN-49234-Interview_involved_parties_0",
+                "document_id": "http://www.omilab.org#Subsequent-51151-Non-exclusive_Gateway_BPMN-49234-Interview_involved_parties",
+                "text": "Subsequent-51151-Non-exclusive_Gateway_BPMN-49234-Interview_involved_parties: - is a r_Subsequent. - is the default process path: No. - starts from Non-exclusive Gateway (BPMN)-49234. - source is a o_Non-exclusive_Gateway_BPMN. - goes to Interview involved parties. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "688a2bf1-78c7-55ee-8cb9-76e83d994112",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-49400-Evidence_complete?_0",
+                "document_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-49400-Evidence_complete?",
+                "text": "Exclusive_Gateway_BPMN-49400-Evidence_complete?: - is a o_Exclusive_Gateway_BPMN. - is inside: Document and record collection procedure. - has gateway type: Data-based (without marker)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "68e55bdf-9e17-52e4-89a0-494f423b68ec",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49494-Attempt_alternative_methods-Record_notification_0",
+                "document_id": "http://www.omilab.org#Subsequent-49494-Attempt_alternative_methods-Record_notification",
+                "text": "Subsequent-49494-Attempt_alternative_methods-Record_notification: - is a r_Subsequent. - is the default process path: No. - starts from Attempt alternative methods. - source is a o_Task_BPMN. - goes to Record notification. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "6ea0da1b-949b-5ce7-90fd-f4062a30c325",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48807-Prepare_list_of_witnesses-Contact_involved_parties_0",
+                "document_id": "http://www.omilab.org#Subsequent-48807-Prepare_list_of_witnesses-Contact_involved_parties",
+                "text": "Subsequent-48807-Prepare_list_of_witnesses-Contact_involved_parties: - is a r_Subsequent. - is the default process path: No. - starts from Prepare list of witnesses. - source is a o_Task_BPMN. - goes to Contact involved parties. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "6f2de5d5-3f5f-5933-a613-ba93244f249a",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48786-Unreachable_parties_procedure-Case_investigation_0",
+                "document_id": "http://www.omilab.org#Subsequent-48786-Unreachable_parties_procedure-Case_investigation",
+                "text": "Subsequent-48786-Unreachable_parties_procedure-Case_investigation: - is a r_Subsequent. - is the default process path: No. - starts from Unreachable parties procedure. - source is a o_Sub-Process_BPMN. - goes to Case investigation. - target is a o_Sub-Process_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "6fdec028-db12-5932-a091-e3f1c0b2705c",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51153-Interview_involved_parties-Non-exclusive_Gateway_BPMN-49238_0",
+                "document_id": "http://www.omilab.org#Subsequent-51153-Interview_involved_parties-Non-exclusive_Gateway_BPMN-49238",
+                "text": "Subsequent-51153-Interview_involved_parties-Non-exclusive_Gateway_BPMN-49238: - is a r_Subsequent. - is the default process path: No. - starts from Interview involved parties. - source is a o_Task_BPMN. - goes to Non-exclusive Gateway (BPMN)-49238. - target is a o_Non-exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "704c551e-e548-5285-bf87-ad7c3daf5343",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#End_Event_BPMN-51183-Statement_prepared_0",
+                "document_id": "http://www.omilab.org#End_Event_BPMN-51183-Statement_prepared",
+                "text": "End_Event_BPMN-51183-Statement_prepared: - is a o_End_Event_BPMN. - is inside: Statement recording procedure . - has model type: local."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "71093355-ecd8-5684-8941-c0ce66fce1a3",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50737-Case_manager_0",
+                "document_id": "http://www.omilab.org#Role-50737-Case_manager",
+                "text": "Role-50737-Case_manager: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "713086a5-60b8-54db-95fa-29d432779738",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-50986-Analyze_documents_and_records_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-50986-Analyze_documents_and_records",
+                "text": "Task_BPMN-50986-Analyze_documents_and_records: - is a o_Task_BPMN. - is described in: Case investigation. - is carried out by: Bianca Hayes. - is carried out by: Alexander Moore. - within unit: Investigation & evidence. - has execution time: 00:000:00:50:00. - has loop type: Multi-instance. - has sequential execution: No. - uses referenced data input: Documents and records. - costs 20. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "742e6911-1748-5a87-a01e-a8c63234dd36",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49022-Complaint_admissible?-Case_preparation_0",
+                "document_id": "http://www.omilab.org#Subsequent-49022-Complaint_admissible?-Case_preparation",
+                "text": "Subsequent-49022-Complaint_admissible?-Case_preparation: - is a r_Subsequent. - has transition label: yes. - is the default process path: No. - starts from Complaint admissible?. - source is a o_Exclusive_Gateway_BPMN. - goes to Case preparation. - target is a o_Sub-Process_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "75ef806b-72bb-53c5-ac4f-208cb205ef14",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49483-Party_reached?-Record_notification_0",
+                "document_id": "http://www.omilab.org#Subsequent-49483-Party_reached?-Record_notification",
+                "text": "Subsequent-49483-Party_reached?-Record_notification: - is a r_Subsequent. - has transition label: yes. - is the default process path: No. - starts from Party reached?. - source is a o_Exclusive_Gateway_BPMN. - goes to Record notification. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326612,
+            "id": "761195e9-1b8c-5213-9cdf-7832645bd5ec",
+            "lastUpdateTimeUnix": 1774986326612,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Intermediate_Event_BPMN-48687-Complaint_withdrawn_0",
+                "document_id": "http://www.omilab.org#Intermediate_Event_BPMN-48687-Complaint_withdrawn",
+                "text": "Intermediate_Event_BPMN-48687-Complaint_withdrawn: - is a o_Intermediate_Event_BPMN. - is described in: Main judicial process. - is attached to: Case investigation."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "7b8d86f2-7cd4-55ff-855f-a92cb7d921aa",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49412-Evidence_complete?-Issue_additional_request_0",
+                "document_id": "http://www.omilab.org#Subsequent-49412-Evidence_complete?-Issue_additional_request",
+                "text": "Subsequent-49412-Evidence_complete?-Issue_additional_request: - is a r_Subsequent. - has transition label: no. - is the default process path: No. - starts from Evidence complete?. - source is a o_Exclusive_Gateway_BPMN. - goes to Issue additional request. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "7bf0f0d1-762e-5766-b62e-76fdc0729735",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49421-Prepare_evidence_set_for_analysis-Collection_completed_0",
+                "document_id": "http://www.omilab.org#Subsequent-49421-Prepare_evidence_set_for_analysis-Collection_completed",
+                "text": "Subsequent-49421-Prepare_evidence_set_for_analysis-Collection_completed: - is a r_Subsequent. - is the default process path: No. - starts from Prepare evidence set for analysis. - source is a o_Task_BPMN. - goes to Collection completed. - target is a o_End_Event_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "7ccaa8f3-7549-57ef-8edb-351e9d50deea",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-51136-Flag_contradictions_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-51136-Flag_contradictions",
+                "text": "Task_BPMN-51136-Flag_contradictions: - is a o_Task_BPMN. - is described in: Statement recording procedure . - is inside: Statement recording procedure . - is carried out by: Bianca Hayes. - is carried out by: Alexander Moore. - within unit: Investigation & evidence. - has execution time: 00:000:00:25:00. - has loop type: Not specified. - has sequential execution: No. - costs 13.33. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "7def10c8-3150-56d9-9c68-ec63a53f2233",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-49624-Case_administration_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-49624-Case_administration",
+                "text": "Organizational_Unit-49624-Case_administration: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "7e2c6841-05b9-59df-9f71-26858b958758",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48804-Contact_involved_parties_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48804-Contact_involved_parties",
+                "text": "Task_BPMN-48804-Contact_involved_parties: - is a o_Task_BPMN. - is described in: Case preparation. - is inside: Preparation procedure. - is carried out by: Victor Hayes. - is carried out by: Rachel Bennett. - within unit: Case administration. - has execution time: 00:000:02:00:00. - has loop type: Multi-instance. - has sequential execution: No. - has cardinality: 3. - uses referenced data input: Witnesses info. - costs 25. - has task type: Send."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "7eb22774-08c8-5b3d-8fbd-a2d9cfb96fff",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49423-Collect_missing_items-Prepare_evidence_set_for_analysis_0",
+                "document_id": "http://www.omilab.org#Subsequent-49423-Collect_missing_items-Prepare_evidence_set_for_analysis",
+                "text": "Subsequent-49423-Collect_missing_items-Prepare_evidence_set_for_analysis: - is a r_Subsequent. - is the default process path: No. - starts from Collect missing items. - source is a o_Task_BPMN. - goes to Prepare evidence set for analysis. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "80d1713e-c012-5b85-a376-0685b9db4db3",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49318-Collect_physical_evidence_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49318-Collect_physical_evidence",
+                "text": "Task_BPMN-49318-Collect_physical_evidence: - is a o_Task_BPMN. - is described in: On-site investigation. - is inside: On-site investigation procedure. - is carried out by: Marinette Cheng. - within unit: Investigation & evidence. - has execution time: 00:000:01:00:00. - has loop type: Not specified. - has sequential execution: No. - costs 40. - has task type: Manual."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "81b05ef8-46c8-5a0d-b0fa-2e9600add0a0",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49717-Michael_Turner_0",
+                "document_id": "http://www.omilab.org#Performer-49717-Michael_Turner",
+                "text": "Performer-49717-Michael_Turner: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Registry. - has hourly wage: 22."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "82a9ffcc-d300-5b17-9aeb-2cf9002f68a1",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-51142-Compare_statements_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-51142-Compare_statements",
+                "text": "Task_BPMN-51142-Compare_statements: - is a o_Task_BPMN. - is described in: Statement recording procedure . - is inside: Statement recording procedure . - is carried out by: Bianca Hayes. - is carried out by: Alexander Moore. - within unit: Investigation & evidence. - has execution time: 00:000:00:40:00. - has loop type: Multi-instance. - has sequential execution: No. - has cardinality: 3. - uses referenced data input: Collected statements. - costs 21.33. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "83193cd9-a008-54be-b26b-d716f7021855",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-49661-Investigation_+_evidence_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-49661-Investigation_+_evidence",
+                "text": "Organizational_Unit-49661-Investigation_+_evidence: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "834fbd19-5574-5d21-8a45-b390a5c296d7",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51182-Scheduled_date-Non-exclusive_Gateway_BPMN-49234_0",
+                "document_id": "http://www.omilab.org#Subsequent-51182-Scheduled_date-Non-exclusive_Gateway_BPMN-49234",
+                "text": "Subsequent-51182-Scheduled_date-Non-exclusive_Gateway_BPMN-49234: - is a r_Subsequent. - is the default process path: No. - starts from Scheduled date. - source is a o_Start_Event_BPMN. - goes to Non-exclusive Gateway (BPMN)-49234. - target is a o_Non-exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "8afc513d-21a1-509f-825f-015edfeaa15a",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49370-Request_documents-_0",
+                "document_id": "http://www.omilab.org#Subsequent-49370-Request_documents-",
+                "text": "Subsequent-49370-Request_documents-: - is a r_Subsequent. - is the default process path: No. - starts from Request documents. - source is a o_Task_BPMN. - goes to . - target is a o_Non-exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "8b3bf52b-b5c1-521d-8a21-e992f8e041d1",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51152-Non-exclusive_Gateway_BPMN-49234-Document_statements_0",
+                "document_id": "http://www.omilab.org#Subsequent-51152-Non-exclusive_Gateway_BPMN-49234-Document_statements",
+                "text": "Subsequent-51152-Non-exclusive_Gateway_BPMN-49234-Document_statements: - is a r_Subsequent. - is the default process path: No. - starts from Non-exclusive Gateway (BPMN)-49234. - source is a o_Non-exclusive_Gateway_BPMN. - goes to Document statements. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "8cc23dfb-0aeb-59c3-b539-20f247acab6f",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49229-Register_withdrawal-Archive_complaint_file_0",
+                "document_id": "http://www.omilab.org#Subsequent-49229-Register_withdrawal-Archive_complaint_file",
+                "text": "Subsequent-49229-Register_withdrawal-Archive_complaint_file: - is a r_Subsequent. - is the default process path: No. - starts from Register withdrawal. - source is a o_Task_BPMN. - goes to Archive complaint file. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326504,
+            "id": "8f6c8286-7d41-5694-a461-09977911b9c5",
+            "lastUpdateTimeUnix": 1774986326504,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51156-Confirm_consistency-Prepare_statement_analysis_notes_0",
+                "document_id": "http://www.omilab.org#Subsequent-51156-Confirm_consistency-Prepare_statement_analysis_notes",
+                "text": "Subsequent-51156-Confirm_consistency-Prepare_statement_analysis_notes: - is a r_Subsequent. - is the default process path: No. - starts from Confirm consistency. - source is a o_Task_BPMN. - goes to Prepare statement analysis notes. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "91689816-d461-56a0-a7fc-c1884896743e",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48756-Register_findings__0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48756-Register_findings_",
+                "text": "Task_BPMN-48756-Register_findings_: - is a o_Task_BPMN. - is described in: Main judicial process. - is carried out by: Victor Hayes. - within unit: Case administration. - has execution time: 00:000:00:35:00. - has loop type: Not specified. - has sequential execution: No. - costs 14. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "9716e0e7-ebb1-52b2-a98c-a2b22814b4ed",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Object_BPMN-51106-Witnesses_info_0",
+                "document_id": "http://www.omilab.org#Data_Object_BPMN-51106-Witnesses_info",
+                "text": "Data_Object_BPMN-51106-Witnesses_info: - is a o_Data_Object_BPMN. - is described in: Case preparation. - is inside: Preparation procedure. - has data type: Data Object."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "98135017-5635-5357-9950-7610bb1bb2dc",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49436-Notify_parties_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49436-Notify_parties",
+                "text": "Task_BPMN-49436-Notify_parties: - is a o_Task_BPMN. - is described in: Trial. - is inside: Trial procedure. - is carried out by: Laura Bennett. - within unit: Hearing support. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 8. - has task type: Send."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "9965fa31-1c03-5da0-8d73-0b25c239f816",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50734-Judge_0",
+                "document_id": "http://www.omilab.org#Role-50734-Judge",
+                "text": "Role-50734-Judge: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325974,
+            "id": "99d5cf4f-efad-5fee-b3ee-f9b4feca689f",
+            "lastUpdateTimeUnix": 1774986325974,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49218-Check_admissibility_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49218-Check_admissibility",
+                "text": "Task_BPMN-49218-Check_admissibility: - is a o_Task_BPMN. - is described in: Main judicial process. - is carried out by: Adrian Walker. - within unit: Admissibility. - has execution time: 00:000:00:50:00. - has loop type: Not specified. - has sequential execution: No. - costs 30. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "9c25637e-0755-5c74-b597-f408e2738d0c",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Intermediate_Event_BPMN-48723-Persons_not_found_0",
+                "document_id": "http://www.omilab.org#Intermediate_Event_BPMN-48723-Persons_not_found",
+                "text": "Intermediate_Event_BPMN-48723-Persons_not_found: - is a o_Intermediate_Event_BPMN. - is described in: Main judicial process. - is attached to: Contact involved parties."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "9c90dab2-91d8-56f9-973a-7e5f0b75ced1",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-50687-Marinette_Cheng_0",
+                "document_id": "http://www.omilab.org#Performer-50687-Marinette_Cheng",
+                "text": "Performer-50687-Marinette_Cheng: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Investigation & evidence. - has hourly wage: 32."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326396,
+            "id": "9db05f4d-5c9a-5b96-ab43-55033ba39723",
+            "lastUpdateTimeUnix": 1774986326396,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49387-Start_document_collection-Identify_required_documents_and_records_0",
+                "document_id": "http://www.omilab.org#Subsequent-49387-Start_document_collection-Identify_required_documents_and_records",
+                "text": "Subsequent-49387-Start_document_collection-Identify_required_documents_and_records: - is a r_Subsequent. - is the default process path: No. - starts from Start document collection. - source is a o_Start_Event_BPMN. - goes to Identify required documents and records. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "9eaa804b-4df5-55f9-8df7-d9abc0445b90",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49471-Missing_parties_detected-Review_existing_contact_information_0",
+                "document_id": "http://www.omilab.org#Subsequent-49471-Missing_parties_detected-Review_existing_contact_information",
+                "text": "Subsequent-49471-Missing_parties_detected-Review_existing_contact_information: - is a r_Subsequent. - is the default process path: No. - starts from Missing parties detected. - source is a o_Start_Event_BPMN. - goes to Review existing contact information. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326612,
+            "id": "9fefae45-c726-5ade-9923-54680c4d7d2b",
+            "lastUpdateTimeUnix": 1774986326612,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51187-Prepare_statement_analysis_notes-Statement_prepared_0",
+                "document_id": "http://www.omilab.org#Subsequent-51187-Prepare_statement_analysis_notes-Statement_prepared",
+                "text": "Subsequent-51187-Prepare_statement_analysis_notes-Statement_prepared: - is a r_Subsequent. - is the default process path: No. - starts from Prepare statement analysis notes. - source is a o_Task_BPMN. - goes to Statement prepared. - target is a o_End_Event_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325821,
+            "id": "a3a40455-f4c0-5dfd-a835-f8a0e50c7f52",
+            "lastUpdateTimeUnix": 1774986325821,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-51162-Collected_statements-Compare_statements_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-51162-Collected_statements-Compare_statements",
+                "text": "Data_Association_BPMN-51162-Collected_statements-Compare_statements: - is a r_Data_Association_BPMN. - starts from Collected statements. - source is a o_Data_Object_BPMN. - goes to Compare statements. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "a3d7d00a-5ed9-50cf-899f-b06b993f9439",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50719-Registry_clerk_0",
+                "document_id": "http://www.omilab.org#Role-50719-Registry_clerk",
+                "text": "Role-50719-Registry_clerk: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "a4f71b1c-bba8-5358-b6a0-298a33665625",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49633-Emily_Carter_0",
+                "document_id": "http://www.omilab.org#Performer-49633-Emily_Carter",
+                "text": "Performer-49633-Emily_Carter: - is a o_Performer. - belongs to sub-unit: Registry. - has hourly wage: 22."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "a6cf96c8-c909-50e9-8780-3d03ec781ffa",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50743-Case_administrator_0",
+                "document_id": "http://www.omilab.org#Role-50743-Case_administrator",
+                "text": "Role-50743-Case_administrator: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "a7013f04-d0b3-59a1-8951-82a246456cde",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#End_Event_BPMN-49018-Complaint_closed_0",
+                "document_id": "http://www.omilab.org#End_Event_BPMN-49018-Complaint_closed",
+                "text": "End_Event_BPMN-49018-Complaint_closed: - is a o_End_Event_BPMN. - has model type: local."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "a7700589-a889-5c46-8262-bc3481e0e22a",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Organizational_Unit-49618-Judicial_Complaints_Resolution_0",
+                "document_id": "http://www.omilab.org#Organizational_Unit-49618-Judicial_Complaints_Resolution",
+                "text": "Organizational_Unit-49618-Judicial_Complaints_Resolution: - is a o_Organizational_Unit. - has model type: Standard."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "a8029d34-9b0e-56b5-bf26-002c4be411ae",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49377-Retrieve_existing_records-_0",
+                "document_id": "http://www.omilab.org#Subsequent-49377-Retrieve_existing_records-",
+                "text": "Subsequent-49377-Retrieve_existing_records-: - is a r_Subsequent. - is the default process path: No. - starts from Retrieve existing records. - source is a o_Task_BPMN. - goes to . - target is a o_Non-exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "a8994581-c97b-52cb-bc02-dadd0bb49bcd",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49642-Adrien_Agreste_0",
+                "document_id": "http://www.omilab.org#Performer-49642-Adrien_Agreste",
+                "text": "Performer-49642-Adrien_Agreste: - is a o_Performer. - belongs to sub-unit: Admissibility. - has hourly wage: 36."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "a8d4f232-90c1-5db4-8872-23cf8b852bd9",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Working_Environment_Model-Judicial_hierarchy_0",
+                "document_id": "http://www.omilab.org#Working_Environment_Model-Judicial_hierarchy",
+                "text": "Working_Environment_Model-Judicial_hierarchy: - is a m_Working_Environment_Model. - has model type: Working Environment Model."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "a93c0a1e-dde5-544e-b6c9-6a603b266232",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49422-Evidence_complete?-Prepare_evidence_set_for_analysis_0",
+                "document_id": "http://www.omilab.org#Subsequent-49422-Evidence_complete?-Prepare_evidence_set_for_analysis",
+                "text": "Subsequent-49422-Evidence_complete?-Prepare_evidence_set_for_analysis: - is a r_Subsequent. - has transition label: yes. - is the default process path: No. - starts from Evidence complete?. - source is a o_Exclusive_Gateway_BPMN. - goes to Prepare evidence set for analysis. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "a9ccc7d5-0f8d-56d7-b088-60f1bfdbcbfb",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49398-Review_collected_documents_and_records-Evidence_complete?_0",
+                "document_id": "http://www.omilab.org#Subsequent-49398-Review_collected_documents_and_records-Evidence_complete?",
+                "text": "Subsequent-49398-Review_collected_documents_and_records-Evidence_complete?: - is a r_Subsequent. - is the default process path: No. - starts from Review collected documents and records. - source is a o_Task_BPMN. - goes to Evidence complete?. - target is a o_Exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "aa362439-6c00-51ec-aa0c-0eb08f6ec101",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Document_+_record_collection_0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Document_+_record_collection",
+                "text": "Business_Process_Diagram_BPMN_2_0-Document_+_record_collection: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "ab9f889a-3fb2-5388-a759-e57f6320f0c6",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Sub-Process_BPMN-48955-Document_and_record_collection_0",
+                "document_id": "http://www.omilab.org#Sub-Process_BPMN-48955-Document_and_record_collection",
+                "text": "Sub-Process_BPMN-48955-Document_and_record_collection: - is a o_Sub-Process_BPMN. - is described in: Case investigation. - references subprocess: Document & record collection. - has loop type: Not specified. - has sequential execution: No. - has subprocess type: Embedded."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "abda5678-c797-59a1-93c5-acf228ded073",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#End_Event_BPMN-48987-Case_adjudicated_0",
+                "document_id": "http://www.omilab.org#End_Event_BPMN-48987-Case_adjudicated",
+                "text": "End_Event_BPMN-48987-Case_adjudicated: - is a o_End_Event_BPMN. - is inside: Trial procedure. - has model type: local."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326504,
+            "id": "acc75ebf-041d-5ec6-b22d-d06dbdaf12b2",
+            "lastUpdateTimeUnix": 1774986326504,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51161-Compare_statements-Inconsistencies_identified?_0",
+                "document_id": "http://www.omilab.org#Subsequent-51161-Compare_statements-Inconsistencies_identified?",
+                "text": "Subsequent-51161-Compare_statements-Inconsistencies_identified?: - is a r_Subsequent. - is the default process path: No. - starts from Compare statements. - source is a o_Task_BPMN. - goes to Inconsistencies identified?. - target is a o_Exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "ad0c2e9d-23b9-5a75-b8ba-c2f46c46b81a",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48996-Archive_case_file_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48996-Archive_case_file",
+                "text": "Task_BPMN-48996-Archive_case_file: - is a o_Task_BPMN. - is described in: Trial. - is inside: Trial procedure. - is carried out by: Irene Palmer. - within unit: Records. - has execution time: 00:000:00:25:00. - has loop type: Not specified. - has sequential execution: No. - costs 9.17. - has task type: Manual."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "ad2de20d-36c2-5da4-b534-9fec4d77c97b",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49472-Reattempt_formal_notification_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49472-Reattempt_formal_notification",
+                "text": "Task_BPMN-49472-Reattempt_formal_notification: - is a o_Task_BPMN. - is described in: Unreachable parties procedure. - is inside: Unreachable parties procedure. - is carried out by: Victor Hayes. - within unit: Case administration. - has execution time: 00:000:00:25:00. - has loop type: Not specified. - has sequential execution: No. - costs 12. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "ad900279-3089-5d6e-864c-0d4a92e00072",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Object_BPMN-51118-Collected_statements_0",
+                "document_id": "http://www.omilab.org#Data_Object_BPMN-51118-Collected_statements",
+                "text": "Data_Object_BPMN-51118-Collected_statements: - is a o_Data_Object_BPMN. - is described in: Statement recording procedure . - is inside: Statement recording procedure . - has data type: Data Object."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325821,
+            "id": "ada8895b-b93b-5338-967f-8211defea78d",
+            "lastUpdateTimeUnix": 1774986325821,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Start_Event_BPMN-48666-Complaint_received_0",
+                "document_id": "http://www.omilab.org#Start_Event_BPMN-48666-Complaint_received",
+                "text": "Start_Event_BPMN-48666-Complaint_received: - is a o_Start_Event_BPMN. - has model type: Top-level."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "af7edfc5-5d47-5ae7-b1d7-78eed56b78fb",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49010-Notify_inadmissibility_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49010-Notify_inadmissibility",
+                "text": "Task_BPMN-49010-Notify_inadmissibility: - is a o_Task_BPMN. - is described in: Main judicial process. - is carried out by: Victor Hayes. - within unit: Case administration. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 8. - has task type: Send."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "afd3b14f-0944-532b-a8f3-05a31773c729",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48690-Register_withdrawal_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48690-Register_withdrawal",
+                "text": "Task_BPMN-48690-Register_withdrawal: - is a o_Task_BPMN. - is described in: Main judicial process. - is carried out by: Victor Hayes. - within unit: Case administration. - has execution time: 00:000:00:15:00. - has loop type: Not specified. - has sequential execution: No. - costs 6. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "aff4c7cf-10e3-58a8-859e-30d417c1953e",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49002-Trial_initiated-Conduct_trial_0",
+                "document_id": "http://www.omilab.org#Subsequent-49002-Trial_initiated-Conduct_trial",
+                "text": "Subsequent-49002-Trial_initiated-Conduct_trial: - is a r_Subsequent. - is the default process path: No. - starts from Trial initiated. - source is a o_Start_Event_BPMN. - goes to Conduct trial. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "affd3add-ddbd-5ad6-b475-8d286dc3ede7",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-51124-Non-exclusive_Gateway_BPMN-49234_0",
+                "document_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-51124-Non-exclusive_Gateway_BPMN-49234",
+                "text": "Non-exclusive_Gateway_BPMN-51124-Non-exclusive_Gateway_BPMN-49234: - is a o_Non-exclusive_Gateway_BPMN. - is inside: Statement recording procedure . - has gateway type: Parallel."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "b12b7ce2-0d6d-5c38-acbb-b041a714fa22",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49440-Notify_parties-Archive_case_file_0",
+                "document_id": "http://www.omilab.org#Subsequent-49440-Notify_parties-Archive_case_file",
+                "text": "Subsequent-49440-Notify_parties-Archive_case_file: - is a r_Subsequent. - is the default process path: No. - starts from Notify parties. - source is a o_Task_BPMN. - goes to Archive case file. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "b236d71f-7892-552e-8dd6-ae23c70b19cd",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Sub-Process_BPMN-51175-Statement_recording_procedure_0",
+                "document_id": "http://www.omilab.org#Sub-Process_BPMN-51175-Statement_recording_procedure",
+                "text": "Sub-Process_BPMN-51175-Statement_recording_procedure: - is a o_Sub-Process_BPMN. - is described in: Case investigation. - references subprocess: Statement recording procedure . - has loop type: Not specified. - has sequential execution: No. - has subprocess type: Embedded."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "b5989044-21a8-5fc0-bb48-bc05945ef793",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49021-Archive_complaint_file-Complaint_closed_0",
+                "document_id": "http://www.omilab.org#Subsequent-49021-Archive_complaint_file-Complaint_closed",
+                "text": "Subsequent-49021-Archive_complaint_file-Complaint_closed: - is a r_Subsequent. - is the default process path: No. - starts from Archive complaint file. - source is a o_Task_BPMN. - goes to Complaint closed. - target is a o_End_Event_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "bba22e14-f161-5edf-a789-a14835da2ff0",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49696-Irene_Palmer_0",
+                "document_id": "http://www.omilab.org#Performer-49696-Irene_Palmer",
+                "text": "Performer-49696-Irene_Palmer: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Records. - has hourly wage: 22."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "bc0675c3-53a2-5ef4-ba31-8bb58b90538f",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-50990-Documents_and_records-Analyze_documents_and_records_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-50990-Documents_and_records-Analyze_documents_and_records",
+                "text": "Data_Association_BPMN-50990-Documents_and_records-Analyze_documents_and_records: - is a r_Data_Association_BPMN. - starts from Documents and records. - source is a o_Data_Object_BPMN. - goes to Analyze documents and records. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "bc30b8e8-2a69-50f6-80d5-a04600154515",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49375--Review_collected_documents_and_records_0",
+                "document_id": "http://www.omilab.org#Subsequent-49375--Review_collected_documents_and_records",
+                "text": "Subsequent-49375--Review_collected_documents_and_records: - is a r_Subsequent. - is the default process path: No. - starts from . - source is a o_Non-exclusive_Gateway_BPMN. - goes to Review collected documents and records. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "be1221a0-4014-5d29-9cc1-e6899c86eb53",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-51111-Witnesses_info-Contact_involved_parties_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-51111-Witnesses_info-Contact_involved_parties",
+                "text": "Data_Association_BPMN-51111-Witnesses_info-Contact_involved_parties: - is a r_Data_Association_BPMN. - starts from Witnesses info. - source is a o_Data_Object_BPMN. - goes to Contact involved parties. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "c3b32d0f-9995-5782-a616-d6a439f07ef3",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Case_preparation_0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Case_preparation",
+                "text": "Business_Process_Diagram_BPMN_2_0-Case_preparation: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "c4f25754-e4d2-50f8-9b89-e1b4830af5fc",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48768-Complaint_received-Register_complaint_0",
+                "document_id": "http://www.omilab.org#Subsequent-48768-Complaint_received-Register_complaint",
+                "text": "Subsequent-48768-Complaint_received-Register_complaint: - is a r_Subsequent. - is the default process path: No. - starts from Complaint received. - source is a o_Start_Event_BPMN. - goes to Register complaint. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325821,
+            "id": "c53e7bc4-8fea-503c-9721-10bda229cb25",
+            "lastUpdateTimeUnix": 1774986325821,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Start_Event_BPMN-49383-Start_document_collection_0",
+                "document_id": "http://www.omilab.org#Start_Event_BPMN-49383-Start_document_collection",
+                "text": "Start_Event_BPMN-49383-Start_document_collection: - is a o_Start_Event_BPMN. - is inside: Document and record collection procedure. - has model type: Top-level."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "c77dc259-8be2-5cd7-b514-f48c87d487ac",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49701-Laura_Bennett_0",
+                "document_id": "http://www.omilab.org#Performer-49701-Laura_Bennett",
+                "text": "Performer-49701-Laura_Bennett: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Hearing support. - has hourly wage: 26."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "c8a46c86-bc8a-5305-8974-2942d76349cb",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-51133-Prepare_statement_analysis_notes_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-51133-Prepare_statement_analysis_notes",
+                "text": "Task_BPMN-51133-Prepare_statement_analysis_notes: - is a o_Task_BPMN. - is described in: Statement recording procedure . - is inside: Statement recording procedure . - is carried out by: Bianca Hayes. - within unit: Investigation & evidence. - has execution time: 00:000:00:30:00. - has loop type: Not specified. - has sequential execution: No. - costs 16. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "c9a86ddc-5247-5802-9156-6ddb0729a0b2",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49484-Attempt_alternative_methods_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49484-Attempt_alternative_methods",
+                "text": "Task_BPMN-49484-Attempt_alternative_methods: - is a o_Task_BPMN. - is described in: Unreachable parties procedure. - is inside: Unreachable parties procedure. - is carried out by: Rachel Bennett. - within unit: Case administration. - has execution time: 00:000:03:00:00. - has loop type: Not specified. - has sequential execution: No. - costs 19. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325821,
+            "id": "cc3736d9-22a8-50b9-a3fa-694abdb67c72",
+            "lastUpdateTimeUnix": 1774986325821,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-51160-Document_statements-Collected_statements_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-51160-Document_statements-Collected_statements",
+                "text": "Data_Association_BPMN-51160-Document_statements-Collected_statements: - is a r_Data_Association_BPMN. - starts from Document statements. - source is a o_Task_BPMN. - goes to Collected statements. - target is a o_Data_Object_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "ceb3b403-aa7f-54c2-adc1-5d8d6cc49cdc",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-51130-Confirm_consistency_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-51130-Confirm_consistency",
+                "text": "Task_BPMN-51130-Confirm_consistency: - is a o_Task_BPMN. - is described in: Statement recording procedure . - is inside: Statement recording procedure . - is carried out by: Bianca Hayes. - is carried out by: Alexander Moore. - within unit: Investigation & evidence. - has execution time: 00:000:00:15:00. - has loop type: Not specified. - has sequential execution: No. - costs 8. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "ced52309-ec18-5e6f-b7b1-5efd29130a37",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49418-Prepare_evidence_set_for_analysis_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49418-Prepare_evidence_set_for_analysis",
+                "text": "Task_BPMN-49418-Prepare_evidence_set_for_analysis: - is a o_Task_BPMN. - is described in: Document & record collection. - is inside: Document and record collection procedure. - is carried out by: Bianca Hayes. - within unit: Investigation & evidence. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 10.67. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325974,
+            "id": "cf685050-b90c-5077-87a0-734f851cbd18",
+            "lastUpdateTimeUnix": 1774986325974,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Statement_recording_procedure__0",
+                "document_id": "http://www.omilab.org#Business_Process_Diagram_BPMN_2_0-Statement_recording_procedure_",
+                "text": "Business_Process_Diagram_BPMN_2_0-Statement_recording_procedure_: - is a m_Business_Process_Diagram_BPMN_2_0. - has model type: Business Process Diagram (BPMN 2.0)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "d1562c46-b6ae-506f-acca-2aca2372354e",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50749-Court_Clerk_0",
+                "document_id": "http://www.omilab.org#Role-50749-Court_Clerk",
+                "text": "Role-50749-Court_Clerk: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "d881d656-872c-503a-a840-c9b36581d920",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49435-Judicial_decision-Register_decision_0",
+                "document_id": "http://www.omilab.org#Subsequent-49435-Judicial_decision-Register_decision",
+                "text": "Subsequent-49435-Judicial_decision-Register_decision: - is a r_Subsequent. - is the default process path: No. - starts from Judicial decision. - source is a o_Task_BPMN. - goes to Register decision. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "da9b5994-ac36-568d-a7df-7d177d71b675",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-50989-Document_and_record_collection-Analyze_documents_and_records_0",
+                "document_id": "http://www.omilab.org#Subsequent-50989-Document_and_record_collection-Analyze_documents_and_records",
+                "text": "Subsequent-50989-Document_and_record_collection-Analyze_documents_and_records: - is a r_Subsequent. - is the default process path: No. - starts from Document and record collection. - source is a o_Sub-Process_BPMN. - goes to Analyze documents and records. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "dbe98e09-6401-5802-bb46-868a963178c2",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Start_Event_BPMN-51178-Scheduled_date_0",
+                "document_id": "http://www.omilab.org#Start_Event_BPMN-51178-Scheduled_date",
+                "text": "Start_Event_BPMN-51178-Scheduled_date: - is a o_Start_Event_BPMN. - is inside: Statement recording procedure . - has model type: Top-level."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "dbfbace9-9454-595c-a194-6bbc311b4979",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Object_BPMN-49378-Documents_and_records_0",
+                "document_id": "http://www.omilab.org#Data_Object_BPMN-49378-Documents_and_records",
+                "text": "Data_Object_BPMN-49378-Documents_and_records: - is a o_Data_Object_BPMN. - is described in: Case investigation. - has data type: Data Object."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "deba8d26-71b6-5718-b88f-6d244ba69fd7",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-49476-Party_reached?_0",
+                "document_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-49476-Party_reached?",
+                "text": "Exclusive_Gateway_BPMN-49476-Party_reached?: - is a o_Exclusive_Gateway_BPMN. - is inside: Unreachable parties procedure. - has gateway type: Data-based (without marker)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "e45ec787-ecad-50f1-92a1-d5f58dbef579",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-51157-Flag_contradictions-Prepare_statement_analysis_notes_0",
+                "document_id": "http://www.omilab.org#Subsequent-51157-Flag_contradictions-Prepare_statement_analysis_notes",
+                "text": "Subsequent-51157-Flag_contradictions-Prepare_statement_analysis_notes: - is a r_Subsequent. - is the default process path: No. - starts from Flag contradictions. - source is a o_Task_BPMN. - goes to Prepare statement analysis notes. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "e5a76839-b658-5447-a638-fe479882801f",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49674-Gabriella_Hayes_0",
+                "document_id": "http://www.omilab.org#Performer-49674-Gabriella_Hayes",
+                "text": "Performer-49674-Gabriella_Hayes: - is a o_Performer. - is described in: Judicial hierarchy. - belongs to sub-unit: Hearing support. - has hourly wage: 26."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325974,
+            "id": "e9d33311-e816-571c-81dc-b17518ee0798",
+            "lastUpdateTimeUnix": 1774986325974,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Object_BPMN-48762-Case_file_0",
+                "document_id": "http://www.omilab.org#Data_Object_BPMN-48762-Case_file",
+                "text": "Data_Object_BPMN-48762-Case_file: - is a o_Data_Object_BPMN. - has data type: Data Object."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "e9e98bfe-264a-5f8e-95c8-4721ea317aa4",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49409-Collect_missing_items_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49409-Collect_missing_items",
+                "text": "Task_BPMN-49409-Collect_missing_items: - is a o_Task_BPMN. - is described in: Document & record collection. - is inside: Document and record collection procedure. - is carried out by: Samuel Grant. - within unit: Investigation & evidence. - has execution time: 00:000:00:30:00. - has loop type: Not specified. - has sequential execution: No. - costs 16. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326505,
+            "id": "ea071885-d3b0-5526-bf5f-d9b964883b75",
+            "lastUpdateTimeUnix": 1774986326505,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49493-Party_reached?-Attempt_alternative_methods_0",
+                "document_id": "http://www.omilab.org#Subsequent-49493-Party_reached?-Attempt_alternative_methods",
+                "text": "Subsequent-49493-Party_reached?-Attempt_alternative_methods: - is a r_Subsequent. - has transition label: no. - is the default process path: No. - starts from Party reached?. - source is a o_Exclusive_Gateway_BPMN. - goes to Attempt alternative methods. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "eabbfe49-d2fd-5c44-a185-3cc243ffe142",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50728-Legal_officer_0",
+                "document_id": "http://www.omilab.org#Role-50728-Legal_officer",
+                "text": "Role-50728-Legal_officer: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "ebc6e564-3bd0-5a3b-81f9-36c5f722f7db",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49439-Register_decision-Notify_parties_0",
+                "document_id": "http://www.omilab.org#Subsequent-49439-Register_decision-Notify_parties",
+                "text": "Subsequent-49439-Register_decision-Notify_parties: - is a r_Subsequent. - is the default process path: No. - starts from Register decision. - source is a o_Task_BPMN. - goes to Notify parties. - target is a o_Task_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "ec7dcd67-e72f-5c5c-b027-a73d2f80c57d",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-51121-Document_statements_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-51121-Document_statements",
+                "text": "Task_BPMN-51121-Document_statements: - is a o_Task_BPMN. - is described in: Statement recording procedure . - is inside: Statement recording procedure . - is carried out by: Bianca Hayes. - is carried out by: Alexander Moore. - within unit: Investigation & evidence. - has execution time: 00:000:01:00:00. - has loop type: Multi-instance. - has sequential execution: No. - has cardinality: 3. - produces referenced data output: Collected statements. - costs 20. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "ed6f7692-696a-5e9c-9cd9-a0f44fcaafe6",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49405-Issue_additional_request_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49405-Issue_additional_request",
+                "text": "Task_BPMN-49405-Issue_additional_request: - is a o_Task_BPMN. - is described in: Document & record collection. - is inside: Document and record collection procedure. - is carried out by: Bianca Hayes. - within unit: Investigation & evidence. - has execution time: 00:000:00:15:00. - has loop type: Not specified. - has sequential execution: No. - costs 8. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "eddd469c-8cdc-5352-8b6f-d9a7686cea2a",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Role-50725-Investigating_officer_0",
+                "document_id": "http://www.omilab.org#Role-50725-Investigating_officer",
+                "text": "Role-50725-Investigating_officer: - is a o_Role."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "ef0415a7-10b2-50cd-a9be-4a3f26259dea",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48801-Prepare_list_of_witnesses_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48801-Prepare_list_of_witnesses",
+                "text": "Task_BPMN-48801-Prepare_list_of_witnesses: - is a o_Task_BPMN. - is described in: Case preparation. - is inside: Preparation procedure. - is carried out by: Rachel Bennett. - within unit: Case administration. - has execution time: 00:000:00:30:00. - has loop type: Not specified. - has sequential execution: No. - costs 12.5. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326280,
+            "id": "f044136c-aac3-5f8b-a752-aae5888b738a",
+            "lastUpdateTimeUnix": 1774986326280,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48792-Register_findings_-Trial_0",
+                "document_id": "http://www.omilab.org#Subsequent-48792-Register_findings_-Trial",
+                "text": "Subsequent-48792-Register_findings_-Trial: - is a r_Subsequent. - has transition label: sent to court. - has transition condition: sent to court. - is the default process path: No. - starts from Register findings . - source is a o_Task_BPMN. - goes to Trial. - target is a o_Sub-Process_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325822,
+            "id": "f2ffe5c4-f892-5e2f-93f7-9222dadda871",
+            "lastUpdateTimeUnix": 1774986325822,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Data_Association_BPMN-48772-Case_investigation-Case_file_0",
+                "document_id": "http://www.omilab.org#Data_Association_BPMN-48772-Case_investigation-Case_file",
+                "text": "Data_Association_BPMN-48772-Case_investigation-Case_file: - is a r_Data_Association_BPMN. - starts from Case investigation. - source is a o_Sub-Process_BPMN. - goes to Case file. - target is a o_Data_Object_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326695,
+            "id": "f41233b9-0f5c-5acc-860f-0cee9106483b",
+            "lastUpdateTimeUnix": 1774986326695,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Sub-Process_BPMN-48961-On-site_investigation_0",
+                "document_id": "http://www.omilab.org#Sub-Process_BPMN-48961-On-site_investigation",
+                "text": "Sub-Process_BPMN-48961-On-site_investigation: - is a o_Sub-Process_BPMN. - is described in: Case investigation. - references subprocess: On-site investigation. - has loop type: Not specified. - has sequential execution: No. - has subprocess type: Ad-Hoc."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326281,
+            "id": "f573b4f8-f0fd-515c-a942-0a1107929de4",
+            "lastUpdateTimeUnix": 1774986326281,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49221-Check_admissibility-Complaint_admissible?_0",
+                "document_id": "http://www.omilab.org#Subsequent-49221-Check_admissibility-Complaint_admissible?",
+                "text": "Subsequent-49221-Check_admissibility-Complaint_admissible?: - is a r_Subsequent. - is the default process path: No. - starts from Check admissibility. - source is a o_Task_BPMN. - goes to Complaint admissible?. - target is a o_Exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "f6edc2e4-adee-5579-9693-8e283dddf92d",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-49468-Review_existing_contact_information_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-49468-Review_existing_contact_information",
+                "text": "Task_BPMN-49468-Review_existing_contact_information: - is a o_Task_BPMN. - is described in: Unreachable parties procedure. - is inside: Unreachable parties procedure. - is carried out by: Rachel Bennett. - within unit: Case administration. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 8. - has task type: Not specified."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326125,
+            "id": "f7522611-7736-5575-90cf-c1c3d7e21ef4",
+            "lastUpdateTimeUnix": 1774986326125,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48981-Register_decision_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48981-Register_decision",
+                "text": "Task_BPMN-48981-Register_decision: - is a o_Task_BPMN. - is described in: Trial. - is inside: Trial procedure. - is carried out by: Gabriella Hayes. - within unit: Hearing support. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 8.67. - has task type: User."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "f76cd740-f6a8-5780-b35c-e788e33449dc",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-49350-Identify_required_documents_and_records-Required_sources?_0",
+                "document_id": "http://www.omilab.org#Subsequent-49350-Identify_required_documents_and_records-Required_sources?",
+                "text": "Subsequent-49350-Identify_required_documents_and_records-Required_sources?: - is a r_Subsequent. - is the default process path: No. - starts from Identify required documents and records. - source is a o_Task_BPMN. - goes to Required sources?. - target is a o_Non-exclusive_Gateway_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "fa1b22f3-12a7-5ef7-8d4e-078dc7c2b8bc",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Performer-49683-Paul_Mercer_0",
+                "document_id": "http://www.omilab.org#Performer-49683-Paul_Mercer",
+                "text": "Performer-49683-Paul_Mercer: - is a o_Performer. - belongs to sub-unit: Hearing support. - has hourly wage: 26."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325633,
+            "id": "fbe97e5e-9660-5f3a-a7c5-452b82a4d0c1",
+            "lastUpdateTimeUnix": 1774986325633,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-49006-Complaint_admissible?_0",
+                "document_id": "http://www.omilab.org#Exclusive_Gateway_BPMN-49006-Complaint_admissible?",
+                "text": "Exclusive_Gateway_BPMN-49006-Complaint_admissible?: - is a o_Exclusive_Gateway_BPMN. - has gateway type: Data-based (without marker)."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326395,
+            "id": "fce2fbe7-596a-52bd-a519-a6f7fa52dae6",
+            "lastUpdateTimeUnix": 1774986326395,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Subsequent-48785-Persons_not_found-Unreachable_parties_procedure_0",
+                "document_id": "http://www.omilab.org#Subsequent-48785-Persons_not_found-Unreachable_parties_procedure",
+                "text": "Subsequent-48785-Persons_not_found-Unreachable_parties_procedure: - is a r_Subsequent. - is the default process path: No. - starts from Persons not found. - source is a o_Intermediate_Event_BPMN. - goes to Unreachable parties procedure. - target is a o_Sub-Process_BPMN."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986326611,
+            "id": "fde00b35-d0cb-590c-bd1c-d0cef3fc962f",
+            "lastUpdateTimeUnix": 1774986326611,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-49372-_0",
+                "document_id": "http://www.omilab.org#Non-exclusive_Gateway_BPMN-49372-",
+                "text": "Non-exclusive_Gateway_BPMN-49372-: - is a o_Non-exclusive_Gateway_BPMN. - is inside: Document and record collection procedure. - has gateway type: Inclusive."
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "BPMNPROCESS",
+            "creationTimeUnix": 1774986325973,
+            "id": "feaf3ad3-ea2d-5562-991f-a00b904f31ce",
+            "lastUpdateTimeUnix": 1774986325973,
+            "properties": {
+                "chunk_id": "http://www.omilab.org#Task_BPMN-48669-Register_complaint_0",
+                "document_id": "http://www.omilab.org#Task_BPMN-48669-Register_complaint",
+                "text": "Task_BPMN-48669-Register_complaint: - is a o_Task_BPMN. - is described in: Main judicial process. - is carried out by: Michael Turner. - within unit: Registry. - has execution time: 00:000:00:20:00. - has loop type: Not specified. - has sequential execution: No. - costs 7.33. - has task type: User."
+            },
+            "vectorWeights": null
+        }
+    ],
+    "totalResults": 174
+}
