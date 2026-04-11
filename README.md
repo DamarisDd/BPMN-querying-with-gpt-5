@@ -1,2 +1,2 @@
 # business-process-querying-with-llms
-Experiments on LLM-mediated querying of RDF-serialized BPMN models under SPARQL- and retrieval-based conditions.
+Querying with gpt-5.4 over RDF-serialized business process structures and execution data: experiments with tool-calling GraphDB agents
