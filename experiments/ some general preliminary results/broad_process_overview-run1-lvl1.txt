@@ -1,0 +1,197 @@
+What can happen throughout the process after Register complaint?
+
+Check admissibility, Complaint admissible?, Notify inadmissibility, Case preparation, Archive complaint file, Case investigation, Complaint closed, Case file, Register findings, Trial, Case closed
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  :Task_BPMN-48669-Register_complaint (^cv:from/^cv:to)? ?start .
+  ?edge a mm:r_Subsequent ; cv:from ?from ; cv:to ?to .
+  FILTER(?from = :Task_BPMN-48669-Register_complaint || EXISTS {
+    :Task_BPMN-48669-Register_complaint (^cv:to/^cv:from)* ?from .
+  })
+  :Task_BPMN-48669-Register_complaint (^cv:to/^cv:from)* ?from .
+  ?edge cv:to ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != :Task_BPMN-48669-Register_complaint)
+}
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  :Task_BPMN-48669-Register_complaint ( ^cv:from / ^cv:to )* ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != :Task_BPMN-48669-Register_complaint)
+}
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  :Task_BPMN-48669-Register_complaint (^cv:from/cv:to)+ ?node .
+  ?node rdfs:label ?label .
+}
+How did you derive this answer?
+
+By traversing the Full judicial process graph from Register complaint along subsequent-flow relations (cv:from/cv:to with mm:r_Subsequent) and collecting the reachable labeled nodes downstream: Check admissibility, Complaint admissible?, Notify inadmissibility, Case preparation, Archive complaint file, Case investigation, Complaint closed, Case file, Register findings, Trial, Case closed
+
+What can happen in the process before Check admissibility?
+
+Register complaint, Complaint received
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  ?node (^cv:to/cv:from)+ :Task_BPMN-49218-Check_admissibility .
+  ?node rdfs:label ?label .
+}
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  ?node (cv:to/^cv:from)+ :Task_BPMN-49218-Check_admissibility .
+  ?node rdfs:label ?label .
+}
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  ?node (^cv:from/cv:to)+ :Task_BPMN-49218-Check_admissibility .
+  ?node rdfs:label ?label .
+}
+How did you derive this answer?
+
+By traversing the Full judicial process graph backward from Check admissibility along the sequence-flow relations, using the inverse of the downstream path pattern: (^cv:from/cv:to)+ to find all labeled nodes that can reach Check admissibility. This returned Register complaint and Complaint received
+
+What can happen throughout the subprocess after the required documents and records are identified?
+
+Required sources?, Retrieve existing records, Request documents, Review collected documents and records, Evidence complete?, Issue additional request, Prepare evidence set for analysis, Collect missing items, Collection completed
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  :Task_BPMN-49342-Identify_required_documents_and_records (^cv:from/cv:to)+ ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != :Task_BPMN-49342-Identify_required_documents_and_records)
+}
+How did you derive this answer?
+
+By traversing the Document and record collection subprocess forward from Identify required documents and records along sequence-flow relations using the path (^cv:from/cv:to)+, then collecting the reachable labeled nodes and excluding the empty-label gateway and the starting task itself: Required sources?, Retrieve existing records, Request documents, Review collected documents and records, Evidence complete?, Issue additional request, Prepare evidence set for analysis, Collect missing items, Collection completed
+
+What can happen throughout the subprocess after the trial is initiated?
+
+Conduct trial, Judicial decision, Register decision, Notify parties, Archive case file, Case adjudicated
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  :Start_Event_BPMN-48984-Trial_initiated (^cv:from/cv:to)+ ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != :Start_Event_BPMN-48984-Trial_initiated)
+}
+How did you derive this answer?
+
+By traversing the Trial subprocess forward from Trial initiated along sequence-flow relations using the path (^cv:from/cv:to)+, then collecting all reachable labeled nodes except the start event itself: Conduct trial, Judicial decision, Register decision, Notify parties, Archive case file, Case adjudicated
+
+What can happen throughout the Case investigation subprocess?
+
+Case file, Register findings, Trial, Case closed
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  VALUES ?start { :Sub-Process_BPMN-48678-Case_investigation }
+  ?start (^cv:from/cv:to)+ ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != ?start)
+}
+How did you derive this answer?
+
+By traversing forward from the Case investigation subprocess node in the Main judicial process along sequence-flow relations using (^cv:from/cv:to)+ and collecting all reachable labeled nodes except the subprocess itself. This returned Case file, Register findings, Trial, Case closed
+
+What can happen throughout the Case preparation subprocess?
+
+Case investigation, Case file, Register findings, Trial, Case closed
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  VALUES ?start { :Sub-Process_BPMN-48720-Case_preparation }
+  ?start (^cv:from/cv:to)+ ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != ?start)
+}
+How did you derive this answer?
+
+By traversing forward from the Case preparation subprocess node in the Main judicial process along sequence-flow relations using (^cv:from/cv:to)+ and collecting all reachable labeled nodes except the subprocess itself. This returned Case investigation, Case file, Register findings, Trial, Case closed
+
+What can happen throughout the On-site investigation subprocess?
+
+No entity found
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  VALUES ?start { :Sub-Process_BPMN-48961-On-site_investigation }
+  ?start (^cv:from/cv:to)+ ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != ?start)
+}
+How did you derive this answer?
+
+By traversing forward from the On-site investigation subprocess node using the sequence-flow path (^cv:from/cv:to)+ and checking for reachable labeled nodes. No downstream nodes were connected from that subprocess in the provided graph, so no entity was found
+
+What can happen throughout the subprocess if missing parties are detected?
+
+Review existing contact information, Reattempt formal notification, Party reached?, Record notification, Attempt alternative methods, Missing parties handling completed
+
+Called SPARQL: Direct query
+PREFIX : <http://www.omilab.org#>
+PREFIX mm: <http://bee-up.omilab.org/rdf/1_7#>
+PREFIX cv: <http://www.comvantage.eu/mm#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?label WHERE {
+  :Start_Event_BPMN-49465-Missing_parties_detected (^cv:from/cv:to)+ ?node .
+  ?node rdfs:label ?label .
+  FILTER(?node != :Start_Event_BPMN-49465-Missing_parties_detected)
+}
+How did you derive this answer?
+
+By traversing the Unreachable parties procedure subprocess forward from the start event Missing parties detected along sequence-flow relations using (^cv:from/cv:to)+, then collecting all reachable labeled nodes except the start event itself: Review existing contact information, Reattempt formal notification, Party reached?, Record notification, Attempt alternative methods, Missing parties handling completed
+
+What can happen throughout the subprocess after Document and record collection?
+
+Analyze documents and records
+
+No query methods were called.
+How did you derive this answer?
+
+I followed the downstream sequence flow from Document and record collection in the Case investigation subprocess using mm:r_Subsequent with cv:from/cv:to, and the only directly subsequent labeled element is Analyze documents and records.
