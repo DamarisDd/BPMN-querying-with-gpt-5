@@ -1,0 +1,62 @@
+Who is responsible for Register complaint?
+
+Michael Turner
+
+No query methods were called.
+How did you derive this answer?
+
+Task "Register complaint" has mm:r_Responsible :Performer-49717-Michael_Turner, whose label is Michael Turner
+
+Who is responsible for Prepare list of witnesses?
+
+Rachel Bennett
+
+No query methods were called.
+How did you derive this answer?
+
+Task "Prepare list of witnesses" has mm:r_Responsible :Performer-49636-Rachel_Bennett, whose label is Rachel Bennett
+
+Who is responsible for Compare statements?
+
+Bianca Hayes, Alexander Moore
+
+No query methods were called.
+How did you derive this answer?
+
+Task "Compare statements" has two mm:r_Responsible values: :Performer-49671-Bianca_Hayes and :Performer-50684-Alexander_Moore, whose labels are Bianca Hayes and Alexander Moore
+
+Who is responsible for Collect physical evidence?
+
+Marinette Cheng
+
+No query methods were called.
+How did you derive this answer?
+
+Task "Collect physical evidence" has mm:r_Responsible :Performer-50687-Marinette_Cheng, whose label is Marinette Cheng
+
+Who is responsible for Prepare evidence set for analysis?
+
+Bianca Hayes
+
+No query methods were called.
+How did you derive this answer?
+
+Task "Prepare evidence set for analysis" has mm:r_Responsible :Performer-49671-Bianca_Hayes, whose label is Bianca Hayes
+
+Who is responsible for Analyze documents and records?
+
+No entity found
+
+No query methods were called.
+How did you derive this answer?
+
+I checked the task/sub-process "Analyze documents and records". It has no mm:r_Responsible property in the graph, so no responsible performer is specified
+
+Who is responsible for Conduct trial?
+
+Andrew Marshall
+
+No query methods were called.
+How did you derive this answer?
+
+Task "Conduct trial" has mm:r_Responsible :Performer-50702-Andrew_Marshall, whose label is Andrew Marshall
